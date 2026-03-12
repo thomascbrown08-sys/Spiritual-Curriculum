@@ -318,6 +318,39 @@ em { font-style: italic; }
 }
 .box-highlight .box-title { color: var(--navy); }
 
+/* ── Under Construction Banner ───────────────────────────── */
+.construction-banner {
+  background: #7a3a10;
+  color: #fff8ee;
+  border: 2px solid #c06020;
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.construction-banner .construction-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+.construction-banner .construction-body { flex: 1; }
+.construction-banner strong {
+  color: #ffd080;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+.construction-banner p {
+  font-size: 0.9rem;
+  color: rgba(255,248,238,0.85);
+  margin: 0;
+  line-height: 1.5;
+}
+
 /* ── Discussion Block ─────────────────────────────────────── */
 .discussion {
   background: var(--navy);
