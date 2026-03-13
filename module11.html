@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 11: Old Errors, New Labels — Seeing and Believing</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.heresy-nav {
+  background: var(--cream-dark);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+  font-size: 0.88rem;
+  line-height: 2.1;
+}
+.heresy-nav strong {
+  display: block;
+  font-family: 'Cormorant SC', serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 0.3rem;
+}
+.heresy-nav a {
+  color: var(--teal);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s;
+  margin-right: 0.3rem;
+}
+.heresy-nav a:hover { border-bottom-color: var(--teal-light); }
+
+.heresy-entry {
+  border-left: 3px solid var(--gold);
+  padding-left: 1.5rem;
+  margin: 2.5rem 0;
+}
+.heresy-entry h2 {
+  margin-top: 0;
+  color: var(--navy);
+}
+.heresy-entry .heresy-subtitle {
+  font-style: italic;
+  color: var(--ink-muted);
+  font-size: 1.05rem;
+  margin-top: -0.5rem;
+  margin-bottom: 1.1rem;
+  display: block;
+}
+.heresy-entry h3 {
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: 'Cormorant SC', serif;
+  color: var(--ink-muted);
+  margin-top: 1.3rem;
+  margin-bottom: 0.4rem;
+}
+.diagnostic {
+  background: var(--parchment);
+  border: 1px solid var(--cream-dark);
+  border-left: 3px solid var(--navy);
+  padding: 0.75rem 1rem;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+.diagnostic strong {
+  font-family: 'Cormorant SC', serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.brief-mentions {
+  background: var(--cream-dark);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0;
+}
+.brief-mentions h3 {
+  margin-top: 0;
+  font-size: 1rem;
+  color: var(--navy);
+  margin-bottom: 0.8rem;
+}
+.figure-sidebar {
+  float: right;
+  width: 260px;
+  margin: 0 0 1rem 1.5rem;
+  background: var(--parchment);
+  border: 1px solid var(--cream-dark);
+  border-top: 3px solid var(--gold);
+  padding: 0.9rem 1rem;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.figure-sidebar strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--navy);
+  margin-bottom: 0.3rem;
+}
+.figure-sidebar .dates {
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  font-style: italic;
+}
+@media (max-width: 640px) {
+  .figure-sidebar { float: none; width: 100%; margin: 1rem 0; }
+}
+</style>
+</head>
+<body><div class="site-wrap">
+<div class="mobile-nav-bar">
+  <button class="hamburger" id="hamburger" aria-label="Open navigation"><span></span><span></span><span></span></button>
+  <span class="brand">Seeing &amp; Believing</span><div style="width:30px"></div>
+</div>
+<div class="nav-overlay" id="navOverlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-brand">Seeing &amp; Believing<span>Thinking Carefully About Christian Faith</span></div>
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="spine.html">The Spine</a>
+  <a href="map.html">Curriculum Map</a><a href="responding.html">Responding</a>
+  <a href="glossary.html">Glossary</a><a href="resources.html">Resources</a>
+  <a href="pilgrim.html" class="pilgrim-link">🕊️ Wounded Pilgrim</a>
+  <div class="sidebar-section">Modules</div>
+  <a href="module1.html" class="module-link">1 · The Honest Mirror</a>
+  <a href="module2.html" class="module-link">2 · The Compelling Story</a>
+  <a href="module3.html" class="module-link">3 · The Examined Record</a>
+  <a href="module4.html" class="module-link">4 · The Resurrection</a>
+  <a href="module5.html" class="module-link">5 · The Unvarnished Record</a>
+  <a href="module6.html" class="module-link">6 · The Problem of Suffering</a>
+  <a href="module7.html" class="module-link">7 · Signposts of Growth</a>
+  <a href="module8.html" class="module-link">8 · Obedience as the Door</a>
+  <a href="module9.html" class="module-link">9 · Living It Out</a>
+  <a href="module10.html" class="module-link">10 · Divided We Fall</a>
+  <a href="module11.html" class="module-link active">11 · Old Errors, New Labels</a>
+  <a href="module12.html" class="module-link">12 · We Believe</a>
+</nav>
+<main class="main">
+
+  <div class="page-header">
+    <div class="page-label">Module 11 · 1 John 4:1–3 · Galatians 1:6–9 · Jude 3</div>
+    <h1>Old Errors, New Labels</h1>
+    <div class="page-subtitle">The Heresies That Keep Coming Back</div>
+    <div class="sequence-note">Companion to <a href="module10.html">Module 10: Divided We Fall</a> (relational fracture) · Prepares for <a href="module12.html">Module 12: We Believe</a> (the creeds as response)</div>
+  </div>
+
+  <p>Heresy is rarely invented from scratch. Almost every error the church has confronted is a <em>partial truth</em> — a real biblical emphasis pulled out of balance until it distorts everything around it. The Enemy rarely asks the church to disbelieve Scripture outright; he asks it to overweight one part until the whole is misshapen.</p>
+
+  <p>This means heresies are recognizable across time. They wear new clothes, speak new vocabulary, and appeal to the anxieties of each era — but the underlying moves are consistent. The church has named them, debated them, and defined its faith more precisely <em>because of them</em>. Every major creed is, in part, a scar: evidence of where the body was wounded and healed.</p>
+
+  <p>What follows is not a heresy-hunting guide. Its purpose is <strong>pattern recognition</strong> — the ability to notice when a familiar shape is appearing in unfamiliar clothing, and to ask useful questions before conclusions harden. Naming a pattern is the beginning of a conversation, not the end of one.</p>
+
+  <p>If Module 10 addressed how the Enemy fractures the church through <em>relational and rhetorical</em> tactics, this module addresses how he corrupts it through <em>doctrinal</em> confusion. The two projects are complementary — see especially the <a href="module10-2.html">Vocabulary Trap</a> and <a href="module10-1.html">Escalation Trap</a> entries for where these overlap.</p>
+
+  <div class="heresy-nav">
+    <strong>Navigate this page →</strong>
+    <a href="#arianism">1 · Arianism</a> &nbsp;·&nbsp;
+    <a href="#pelagianism">2 · Pelagianism</a> &nbsp;·&nbsp;
+    <a href="#gnosticism">3 · Gnosticism</a> &nbsp;·&nbsp;
+    <a href="#marcionism">4 · Marcionism</a> &nbsp;·&nbsp;
+    <a href="#docetism">5 · Docetism</a> &nbsp;·&nbsp;
+    <a href="#modalism">6 · Modalism</a> &nbsp;·&nbsp;
+    <a href="#prosperity">7 · Prosperity Gospel</a> &nbsp;·&nbsp;
+    <a href="#brief-mentions">Brief Mentions</a> &nbsp;·&nbsp;
+    <a href="#the-tradition">The Tradition as a Gift</a>
+  </div>
+
+  <!-- ENTRY 1: ARIANISM -->
+  <div class="heresy-entry" id="arianism">
+    <h2>1 · Arianism</h2>
+    <span class="heresy-subtitle">"Jesus was the greatest created being — but still created"</span>
+
+    <div class="figure-sidebar">
+      <strong>Arius of Alexandria</strong>
+      <span class="dates">c. 256–336 AD</span>
+      <p style="margin-top:0.5rem;">A popular and charismatic presbyter in Alexandria, Arius attracted large congregations partly through catchy theological songs. His slogan — <em>"There was when he was not"</em> — proved devastatingly simple to remember. The Council of Nicaea condemned him in 325, but Arianism outlasted Nicaea by decades, backed by imperial favor. Several Germanic tribes that converted to Christianity in the 4th and 5th centuries received Arian Christianity and remained Arian for generations afterward.</p>
+    </div>
+
+    <h3>What it claimed</h3>
+    <p>Arius taught that the Son of God had a beginning — <em>"there was when he was not."</em> Jesus was divine in an exalted sense, far above humanity, the greatest of all beings — but he was still a <em>created</em> being, subordinate to and distinct from the Father in nature. The Father alone is truly God; the Son was brought into existence by the Father before all things.</p>
+
+    <h3>The real question it was trying to answer</h3>
+    <p>How can there be one God if the Father and Son are both God? Arius was protecting monotheism — a genuine concern, rooted in the Hebrew Scriptures' relentless insistence on the oneness of God. The question is legitimate. The answer resolves the tension by demoting the Son into the category of creature, however exalted.</p>
+
+    <h3>Where it went wrong</h3>
+    <p>If Jesus is not fully God, the incarnation cannot accomplish what Scripture says it accomplishes. A creature cannot be the mediator between God and humanity (1 Timothy 2:5) in the way the New Testament describes — a go-between who is genuinely both sides of the relationship. And worship of a created being, however magnificent, is idolatry. The Council of Nicaea's response was precise: the Son is <em>homoousios</em> — "of the same substance" as the Father. Not <em>similar</em> substance. The <em>same</em>. That single Greek word carried a world.</p>
+
+    <h3>How the church responded</h3>
+    <p>The Council of Nicaea (325 AD) produced the Nicene Creed — or rather its first draft. The controversy did not end there. Arianism dominated large sections of the church through the 4th century, backed by emperors, until the Council of Constantinople (381 AD) settled the question officially. The story of how that happened — particularly the role of Athanasius — is told in <a href="module12.html">Module 12</a>.</p>
+
+    <h3>The modern rebrand</h3>
+    <ul>
+      <li><strong>Jehovah's Witnesses</strong> teach explicitly that Jesus is the first and greatest of God's creations, identified with Michael the archangel — not God himself. Their translation of John 1:1 renders it "the Word was <em>a</em> god" rather than "the Word was God." Arius would recognize the move immediately.</li>
+      <li><strong>Mormonism</strong> has a different structure but a related impulse — Jesus is a separate, exalted being, not the eternal God of Nicene orthodoxy.</li>
+      <li><strong>Soft cultural Arianism:</strong> The widespread view that "Jesus was the greatest teacher and moral example who ever lived" is Arianism with the theology quietly removed. He becomes the highest point on a human scale rather than God genuinely stepping into humanity.</li>
+    </ul>
+
+    <div class="diagnostic">
+      <strong>Diagnostic question</strong>
+      When this teaching talks about Jesus, does it preserve his full divinity — or does it quietly place him somewhere on a spectrum between God and humanity?
+    </div>
+  </div>
+
+  <!-- ENTRY 2: PELAGIANISM -->
+  <div class="heresy-entry" id="pelagianism">
+    <h2>2 · Pelagianism</h2>
+    <span class="heresy-subtitle">"You can do this if you try hard enough"</span>
+
+    <div class="figure-sidebar">
+      <strong>Pelagius</strong>
+      <span class="dates">c. 354–420 AD</span>
+      <p style="margin-top:0.5rem;">A British monk of considerable learning and genuine moral seriousness, Pelagius arrived in Rome around 380 AD and was appalled by what he saw: wealthy Christians using grace as an excuse for moral laxity. His response was to insist on the full capacity of the human will. His chief opponent, Augustine of Hippo, recognized that Pelagius was answering a real problem — moral passivity — with a solution that cut the nerve of grace. Their debate shaped the entire Western theological tradition.</p>
+    </div>
+
+    <h3>What it claimed</h3>
+    <p>Pelagius taught that human beings have the natural capacity to choose good and obey God without requiring divine grace to enable that choice. Grace helps — it makes the path clearer, provides a better example through Christ — but is not strictly <em>necessary</em> for righteous living. Adam's sin affected Adam; it did not fundamentally corrupt human nature. We are born into a world where sin is common, but we are not ourselves damaged by nature.</p>
+
+    <h3>The real question it was trying to answer</h3>
+    <p>If humans have no real capacity to choose, how can God hold them morally responsible? The question of human agency is real. And Pelagius was watching Roman Christians treat grace as a license for passivity — using "I'm saved by grace, not works" as an excuse for moral disengagement. His pastoral concern was genuine.</p>
+
+    <h3>Where it went wrong</h3>
+    <p>It misreads the depth of the fall. Paul's argument in Romans 1–3 and 7 is precisely that the human will is not a neutral faculty that merely needs better information — it is <em>bound</em>, complicit in its own bondage. "I do not do what I want, but I do the very thing I hate" (Romans 7:15). If grace is merely assistance to an already-capable agent, the cross is not a rescue but a tutorial. And if we can turn toward God on our own, the prevenient grace the Spine describes — the drawing that precedes any human movement — becomes redundant.</p>
+
+    <h3>How the church responded</h3>
+    <p>Augustine of Hippo wrote his most important theological work in direct response to Pelagius — developing the doctrines of original sin, grace, and the bound will that would shape Western Christianity for a millennium. The Council of Carthage (418 AD) condemned Pelagianism. A softened version, <em>semi-Pelagianism</em> — which held that humans take the first step toward God and grace cooperates from there — was condemned at the Council of Orange (529 AD).</p>
+
+    <h3>The modern rebrand</h3>
+    <ul>
+      <li><strong>Moralistic Therapeutic Deism</strong> (sociologist Christian Smith's phrase for a widespread functional religion): God exists, wants us to be good and happy, and helps us if we make good efforts. This is Pelagianism with the theological vocabulary replaced by therapeutic language. It is the default operating theology of millions of people who attend church without knowing they hold it.</li>
+      <li><strong>Self-help Christianity:</strong> Any framework that structures Christian life primarily as personal development — where Scripture is mainly a motivational resource and Jesus is primarily a model to emulate — operates in a Pelagian register regardless of what the statement of faith says.</li>
+      <li><strong>"God helps those who help themselves"</strong> — possibly the most widely believed piece of theology in American Christianity. Not in the Bible. Pelagius would have approved.</li>
+    </ul>
+
+    <div class="diagnostic">
+      <strong>Diagnostic question</strong>
+      In this teaching, does human effort get the process started — with God then cooperating — or does God's grace precede and enable even the desire to turn toward him?
+    </div>
+  </div>
+
+  <!-- ENTRY 3: GNOSTICISM -->
+  <div class="heresy-entry" id="gnosticism">
+    <h2>3 · Gnosticism</h2>
+    <span class="heresy-subtitle">"The real truth is hidden, and only some people have it"</span>
+
+    <h3>What it claimed</h3>
+    <p>Gnosticism (broadly, 1st–3rd centuries; not a single movement but a family of related teachings) held that the material world is either evil or deeply inferior, created by a lesser deity, and that salvation comes through <em>gnosis</em> — special spiritual knowledge — rather than through faith, history, or bodily resurrection. The God of the Old Testament is typically reframed as the lesser creator; the true God is higher, purely spiritual, and accessible only through those who possess the hidden knowledge. The soul is a divine spark trapped in inferior matter, awaiting liberation.</p>
+
+    <h3>The real question it was trying to answer</h3>
+    <p>Why is the world so broken if a good God made it? The problem of evil and the problem of matter are real. Gnosticism offers a clean answer: the material is simply not God's best work, or not his work at all. It is also addressing the genuine human desire for access to deeper truth — the feeling that there must be more than what is publicly available.</p>
+
+    <h3>Where it went wrong</h3>
+    <p>It requires rejecting the goodness of creation ("God saw that it was good" — Genesis 1), the incarnation ("the Word became <em>flesh</em>" — John 1:14, not "temporarily inhabited flesh"), and the bodily resurrection (1 Corinthians 15). It also, invariably, creates a two-tier Christianity: those with hidden knowledge and those without — which is antithetical to the gospel's explicit demolition of every dividing wall (Ephesians 2:14). The development of the New Testament canon was partly a response to Gnostic groups producing their own gospels; defining <em>which writings</em> carry apostolic authority was, in part, an anti-Gnostic move.</p>
+
+    <h3>How the church responded</h3>
+    <p>Irenaeus of Lyon wrote <em>Against Heresies</em> (c. 180 AD) — the church's first comprehensive theological refutation, and worth knowing by name as the work of the first great heresiologist. His central argument: the God who made the world is the same God who redeems it, and salvation is the redemption of material humanity, not its escape.</p>
+
+    <h3>The modern rebrand</h3>
+    <ul>
+      <li><strong>Prosperity gospel's "revelation knowledge" tier:</strong> Many prosperity teachers distinguish between ordinary Christians and those who have received special revelation about faith principles. The structure is Gnostic — salvation is available to all, but the real goods require access to hidden knowledge held by a teacher.</li>
+      <li><strong>Progressive Christianity's hidden-meaning strand:</strong> When biblical texts are consistently read as containing a spiritual meaning that contradicts the plain sense — and that plain sense is dismissed as primitive — the epistemological structure is Gnostic even when the content is progressive rather than mystical.</li>
+      <li><strong>New Age spirituality:</strong> Almost entirely Gnostic in structure — the material world is illusion, the self contains a divine spark needing liberation, special practices or teachers grant access to higher truth.</li>
+      <li><strong>"I don't need the church; I have a direct spiritual connection":</strong> Not always Gnostic, but when it privileges private spiritual experience over the community and the text, it rhymes with the Gnostic pattern.</li>
+    </ul>
+
+    <div class="diagnostic">
+      <strong>Diagnostic question</strong>
+      Does this teaching require access to something beyond Scripture and ordinary faith — special knowledge, a particular teacher, or a hidden layer of meaning — to reach the real goods?
+    </div>
+  </div>
+
+  <!-- ENTRY 4: MARCIONISM -->
+  <div class="heresy-entry" id="marcionism">
+    <h2>4 · Marcionism</h2>
+    <span class="heresy-subtitle">"The God of the Old Testament is a different God"</span>
+
+    <div class="figure-sidebar">
+      <strong>Marcion of Sinope</strong>
+      <span class="dates">c. 85–160 AD</span>
+      <p style="margin-top:0.5rem;">A wealthy ship owner from Pontus who became influential in the church at Rome, Marcion produced the first known canon of Christian Scripture — consisting of a shortened Luke and ten of Paul's letters, with any passage connecting Jesus to the Hebrew God removed. His movement attracted substantial following. Tertullian wrote <em>Against Marcion</em> (c. 207 AD) — the longest surviving work of early Christian controversy — specifically to counter his influence. The church's response to Marcion clarified what Christian Scripture actually was.</p>
+    </div>
+
+    <h3>What it claimed</h3>
+    <p>Marcion taught that the God of the Old Testament — wrathful, demanding, tribal, violent — is a distinct and lesser deity from the Father of Jesus Christ, who is purely loving and merciful. The two Testaments describe two different Gods. The Old Testament and its God are to be discarded; the New Testament alone, properly purged of its Jewish elements, contains the Christian gospel.</p>
+
+    <h3>The real question it was trying to answer</h3>
+    <p>How do the violence and apparent moral failures of the Old Testament square with the God revealed in Jesus? This is a genuine difficulty that every serious reader of Scripture confronts. The commanded slaughters, the imprecatory Psalms, the judgment oracles — these are not easy material. Marcion's answer is the nuclear option: simply declare them the work of a different, inferior God.</p>
+
+    <h3>Where it went wrong</h3>
+    <p>It requires dismembering Scripture and ignoring Jesus' own repeated affirmation of the Hebrew Bible as pointing to him (Luke 24:27, 44: he opened the Scriptures to the disciples, showing that Moses, the Prophets, and the Psalms all spoke of him). It makes the incarnation incoherent — if the Creator God is not the Father of Jesus, the claim that God entered <em>his own</em> creation to redeem it collapses. It also tends toward the Gnostic trap: matter and history become obstacles rather than the arena of redemption.</p>
+
+    <h3>How the church responded</h3>
+    <p>The retention of the Old Testament as <em>Christian</em> Scripture — insisting on it against Marcion — was one of the earliest canonical decisions. Tertullian's <em>Against Marcion</em> is the fullest response. The Apostles' Creed's opening line — "I believe in God, the Father Almighty, Creator of heaven and earth" — is deliberately anti-Marcionite: the Creator and the Father are identified as the same God from the creed's first breath.</p>
+
+    <h3>The modern rebrand</h3>
+    <ul>
+      <li><strong>Functional Marcionism</strong> is remarkably common in churches that never preach the Old Testament, treat it as pre-Christian history with no ongoing authority, or speak of "the God of the Old Testament" as though he were a different being from the Father of Jesus. This is Marcionism without the label.</li>
+      <li><strong>"I'm a New Testament Christian":</strong> A self-description that functionally discards three-quarters of Scripture as background noise. Common enough that it is rarely challenged.</li>
+      <li><strong>Handling Old Testament difficulty by declaring it simply wrong:</strong> When passages depicting divine judgment are handled not by wrestling with them interpretively, but by declaring that Israel misunderstood God at those points, the underlying move is Marcionite. The discomfort is real; the solution bypasses rather than resolves it.</li>
+    </ul>
+
+    <div class="diagnostic">
+      <strong>Diagnostic question</strong>
+      Does this teaching treat the Old Testament as Christian Scripture — a witness to the same God revealed in Jesus — or does it quietly bracket or discard it?
+    </div>
+  </div>
+
+  <!-- ENTRY 5: DOCETISM -->
+  <div class="heresy-entry" id="docetism">
+    <h2>5 · Docetism</h2>
+    <span class="heresy-subtitle">"Jesus only seemed to be human"</span>
+
+    <h3>What it claimed</h3>
+    <p>From the Greek <em>dokein</em> — "to seem." Docetism held that Jesus was fully divine but only <em>appeared</em> to have a human body. The suffering, the hunger, the death on the cross — these were appearances, not realities. A fully divine being could not genuinely experience the limitations and indignities of human flesh. The incarnation was, in effect, a divine costume rather than a genuine descent into human existence.</p>
+
+    <h3>The real question it was trying to answer</h3>
+    <p>How can God — who is immaterial and typically described as beyond suffering — genuinely become a body that bleeds and dies? The philosophical pressure was real. Greek thought generally treated matter as inferior, and the idea of God truly becoming flesh was scandalous to a Hellenistic audience. Docetism protected divine dignity at the cost of the incarnation's reality.</p>
+
+    <h3>Where it went wrong</h3>
+    <p>If Jesus only <em>seemed</em> to suffer, the atonement is theatrical. If his body was not real, neither was the resurrection. 1 John appears to be written partly as a direct response to Docetist teaching: "every spirit that does not confess that Jesus Christ has come in the flesh is not from God" (1 John 4:2–3). And Hebrews 4:15 — "we have a high priest who was tempted in every way, just as we are, yet without sin" — becomes a decorative verse rather than a pastoral anchor if the humanity was only apparent. Our confidence in approaching God rests on a mediator who actually knows what this costs.</p>
+
+    <h3>How the church responded</h3>
+    <p>The Chalcedonian Definition (451 AD) is the church's most precise formulation of the incarnation: Jesus is fully human <em>and</em> fully divine, in one person, without mixture, confusion, separation, or division. The phrase "fully human" was not an afterthought — it was the hard-won conclusion of centuries of pressing on exactly this question. Module 12 includes the full Chalcedonian text and its story.</p>
+
+    <h3>The modern rebrand</h3>
+    <ul>
+      <li><strong>Functional Docetism in worship culture:</strong> When Jesus is treated in practice as so divine that his human experiences become irrelevant — his temptation wasn't <em>really</em> a temptation, his anguish in Gethsemane was <em>really</em> just a teaching moment — the pastoral weight of his humanity is quietly lost.</li>
+      <li><strong>"Jesus knew everything all the time":</strong> The instinct to protect Jesus' divinity by denying him genuine human limitation. If he always had full divine knowledge, the questions he asks in the Gospels become performances. This is a subtle Docetist error.</li>
+      <li><strong>Over-spiritualized atonement:</strong> When the physical, historical reality of the crucifixion is collapsed entirely into metaphor — the actual body, actual blood, actual death becoming merely symbols — something Docetist is at work.</li>
+    </ul>
+
+    <div class="diagnostic">
+      <strong>Diagnostic question</strong>
+      Does this teaching take Jesus' humanity as seriously as his divinity — or does his divine nature quietly displace his genuine human experience?
+    </div>
+  </div>
+
+  <!-- ENTRY 6: MODALISM -->
+  <div class="heresy-entry" id="modalism">
+    <h2>6 · Modalism</h2>
+    <span class="heresy-subtitle">"Father, Son, and Spirit are just three names for the same person"</span>
+
+    <h3>What it claimed</h3>
+    <p>Also called <em>Sabellianism</em> (after Sabellius, 3rd century) or <em>Patripassianism</em> (meaning "the Father suffered"). Modalism teaches that God is one person who appears in three different <em>modes</em> or roles at different times — as Father in creation and the Old Testament, as Son in the incarnation, as Spirit after Pentecost. The three names describe one actor playing different parts, not three distinct persons in one being. Think of God as a single divine actor wearing different costumes at different moments in redemptive history.</p>
+
+    <h3>The real question it was trying to answer</h3>
+    <p>How can Christians claim to be monotheists if they worship Father, Son, and Spirit? Modalism solves the arithmetic problem of the Trinity by collapsing three to one. It is instinctively attractive to people who find Trinitarian theology complex, and it arises spontaneously in lay preaching with some frequency — often without anyone realizing it has a name.</p>
+
+    <h3>Where it went wrong</h3>
+    <p>It cannot account for scenes in the Gospels where Father, Son, and Spirit are simultaneously and distinctly present. The baptism of Jesus is the clearest case: the Son is baptized in the Jordan, the Spirit descends as a dove, and the Father speaks from heaven (Matthew 3:16–17). If they are one person in different modes, the one God is simultaneously embodied, airborne, and speaking — as himself, to himself. The relational language throughout John's Gospel also becomes incoherent: "the Father and I are one" (10:30), "I will send the Helper" (16:7), "the Father is greater than I" (14:28) — all of these require a real distinction between the one speaking and the one being spoken of or to.</p>
+
+    <h3>How the church responded</h3>
+    <p>The Nicene Creed's language carefully navigates between two errors: Arianism (too separate — the Son is subordinate) and Modalism (too merged — the three are one person). The term <em>hypostasis</em> — meaning a distinct person or subsistence within the one divine being — was developed specifically to name what Modalism denied. One <em>ousia</em> (substance, or being); three <em>hypostases</em> (persons). One what, three whos.</p>
+
+    <h3>The modern rebrand</h3>
+    <ul>
+      <li><strong>Oneness Pentecostalism</strong> (United Pentecostal Church and related denominations) explicitly teaches Modalism and baptizes "in Jesus' name only" rather than the Trinitarian formula. This is a large and often-overlooked movement representing millions of Christians who hold a position the ecumenical church condemned in the 3rd century.</li>
+      <li><strong>Common lay preaching:</strong> Modalism surfaces constantly in well-meaning sermons — "God put on a human suit," "Jesus is the Father in flesh," preaching that uses Father/Son/Spirit interchangeably as names for a single actor. Often unintentional; rarely noticed; a pattern worth gently flagging.</li>
+      <li><strong>"God wearing different hats":</strong> Almost exactly Modalism, sometimes deployed by Sunday school teachers trying to simplify the Trinity. The simplification happens to be a heresy.</li>
+    </ul>
+
+    <div class="diagnostic">
+      <strong>Diagnostic question</strong>
+      In this teaching, are Father, Son, and Spirit genuinely distinct from one another — or are they roles or masks worn by a single divine actor?
+    </div>
+  </div>
+
+  <!-- ENTRY 7: PROSPERITY GOSPEL -->
+  <div class="heresy-entry" id="prosperity">
+    <h2>7 · The Prosperity Gospel</h2>
+    <span class="heresy-subtitle">"Faithfulness produces wealth, health, and success"</span>
+    <div style="background:var(--cream-dark); border-radius:6px; padding:0.6rem 0.9rem; font-size:0.88rem; color:var(--ink-muted); margin-bottom:1rem;">
+      <em>Note: Unlike the preceding entries, the prosperity gospel is not a 2nd-century movement condemned by a council. It is included here as a <strong>case study in what heresy looks like when it arrives today</strong> — and because it is the most widespread active doctrinal distortion affecting lay Christians in the contemporary Western church. It also draws on several of the preceding errors in recognizable ways.</em>
+    </div>
+
+    <h3>What it claims</h3>
+    <p>That God's will for believers is material prosperity, physical health, and worldly success — and that these are reliably produced by faith, positive confession, and giving (often to the teacher's ministry). Suffering and poverty are signs of insufficient faith or unconfessed sin. The "hundredfold return" is a financial promise, not a metaphor.</p>
+
+    <h3>The errors it combines</h3>
+    <ul>
+      <li><strong>Gnostic structure:</strong> Special "revelation knowledge" held by initiates and teachers, producing results unavailable to ordinary Christians. The teacher's access to hidden principles is the mechanism of blessing.</li>
+      <li><strong>Pelagian mechanism:</strong> The believer's <em>positive confession</em> and <em>act of faith</em> generates the divine response. God is positioned as obligated to respond to correct technique — grace has been quietly replaced by a system the believer operates.</li>
+      <li><strong>Marcionite reading:</strong> Old Testament wealth promises to Israel (land, cattle, crops) are transferred directly to contemporary believers without interpretive work. Passages about suffering, Paul's thorn in the flesh (2 Corinthians 12), and the poverty of the saints (Hebrews 11:35–38) are minimized or explained away.</li>
+      <li><strong>Docetist Jesus:</strong> The suffering Christ is consistently underemphasized; the "King of Kings" imagery is maximized. The cross becomes primarily a legal transaction rather than genuine suffering solidarity with human pain.</li>
+    </ul>
+
+    <h3>How to address it</h3>
+    <p>Point to Paul's own "prosperity résumé" in 2 Corinthians 11:24–28 — shipwrecked, beaten, hungry, in danger. Point to Hebrews 11:35–38 — those commended for their faith who received not rescue but death, destitution, and persecution. Point to Jesus in Gethsemane, asking for the cup to be removed. Ask what theological account makes these figures less faithful than a contemporary televangelist.</p>
+
+    <div class="diagnostic">
+      <strong>Diagnostic question</strong>
+      Does this teaching make sense of the lives of Paul, the martyrs, and most Christians throughout history — or does it only make sense for a thin slice of contemporary Western affluence?
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- BRIEF MENTIONS -->
+  <div class="brief-mentions" id="brief-mentions">
+    <h3>Brief Mentions — Named, Not Fully Treated</h3>
+    <p>These heresies are significant enough to name and worth researching further. No full entry treatment here — each is flagged with its essential shape and its modern resonance.</p>
+    <p><strong>Nestorianism</strong> — Nestorius (5th century) effectively taught two persons in Christ rather than one, so sharply distinguishing his divine and human natures that they became two beings sharing a body. This meant Mary should not be called <em>Theotokos</em> (God-bearer) — she bore only the human Christ. Condemned at Ephesus (431). Modern echo: any teaching that too sharply separates the "human side" and "divine side" of Jesus as if they were two subjects inhabiting the same body.</p>
+    <p><strong>Monophysitism / Eutychianism</strong> — The mirror image of Nestorianism: one nature in Christ (the divine absorbing the human) rather than two natures in one person. Condemned at Chalcedon (451). Worth noting: this remains the official theology of several Eastern churches (Ethiopian Orthodox, Coptic, Armenian) — this is a living division within Christianity, not merely historical. Charitable scholarship has questioned whether the terminology difference masks a deeper agreement.</p>
+    <p><strong>Antinomianism</strong> — Grace eliminates moral obligation. If saved by faith and not works, then behavior is irrelevant. Paul addresses this directly: "Shall we go on sinning so that grace may increase? By no means!" (Romans 6:1–2). Modern echo: any form of "greasy grace" that treats sanctification as optional — the believer's legal status changes at conversion, but the life of formation described in Module 7 and 8 is treated as unnecessary or even legalistic.</p>
+    <p><strong>Apollinarianism</strong> — Jesus had a human body but a divine mind and soul — not a fully human psychology. Condemned at Constantinople (381). A subtle form of Docetism, with implications for whether Jesus genuinely experienced temptation, grief, confusion, or the full range of human mental and emotional life.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CLOSING: THE TRADITION AS A GIFT -->
+  <div id="the-tradition">
+    <h2>The Tradition as a Gift</h2>
+
+    <p>The history of heresy and response is not, primarily, a history of paranoia or institutional power. It is a history of people who loved God enough to fight — sometimes at great personal cost, sometimes in exile, sometimes against the majority — to say something <em>true</em> about him. Every creed is a gift from those people. We receive it when we understand what it cost and what it carries.</p>
+
+    <p>The errors in this module did not arise because their proponents were stupid or malicious. They arose because they were trying to answer real and often painful questions — about God's oneness, about human freedom, about why the world is broken, about what the incarnation actually means. Those questions deserve to be taken seriously. The tradition's answers were hard-won, not handed down. They were argued over in council halls, developed through decades of controversy, tested against Scripture again and again by people who were genuinely trying to get this right.</p>
+
+    <p>This means that when you encounter a version of one of these patterns today — in a sermon, a book, a conversation — the right response is not to deploy the label as a conversation-ender. The label is the beginning of a conversation: <em>here is a pattern I recognize, here is the question it is trying to answer, here is where the tradition found it went wrong, and here is the question that might open this up.</em> That is pastoral work, not polemics.</p>
+
+    <div class="box box-nuance toggle-nuance">
+      <div class="box-title">⚖️ A Caution on Weaponizing These Labels</div>
+      <p>The knowledge in this module can be misused. Calling someone a Pelagian or a Gnostic in the middle of a disagreement is almost never a productive move — it escalates rather than clarifies, and it almost always bypasses the actual question the person is asking. The <a href="module10-1.html">Escalation Trap</a> and <a href="module10-5.html">Certainty Weapon</a> entries in Module 10 describe exactly how theological labels get weaponized in community contexts.</p>
+      <p>Use this module to sharpen your own perception and ask better questions. Use it to help others understand what is at stake in a position they are exploring. Use it to recognize when a familiar error is wearing new clothes. Do not use it to win arguments or establish tribal credentials. The purpose of pattern recognition is pastoral — the same as the purpose of the tradition that produced it.</p>
+    </div>
+
+    <p>The creeds that responded to these errors are the subject of <a href="module12.html">Module 12</a>. If this module has made you curious about where exactly the church landed — what language it finally found that was precise enough to carry the truth — that is the right next step.</p>
+
+    <p class="cross-link-note">See also: <a href="module10.html">Module 10 — Divided We Fall</a> (the Enemy's relational and rhetorical tactics, which work alongside doctrinal confusion) · <a href="module12.html">Module 12 — We Believe</a> (the creeds as the church's hard-won response to these errors)</p>
+  </div>
+
+  <div class="module-nav">
+    <a href="module10.html">← Module 10</a>
+    <span class="nav-center"><a href="map.html">Map</a></span>
+    <a href="module12.html">Module 12 →</a>
+  </div>
+
+</main>
+</div>
+<script>
+  var hamburger=document.getElementById('hamburger');var overlay=document.getElementById('navOverlay');var sidebar=document.querySelector('.sidebar');
+  hamburger.addEventListener('click',function(){sidebar.classList.toggle('open');overlay.classList.toggle('active');});
+  overlay.addEventListener('click',function(){sidebar.classList.remove('open');overlay.classList.remove('active');});
+</script>
+</body></html>
