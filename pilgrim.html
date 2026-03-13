@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Wounded Pilgrim — Seeing and Believing</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ── Pilgrim Page Specific ──────────────────────────────── */
+  .pilgrim-hero {
+    background: linear-gradient(135deg, #2a1a2a 0%, #1a2744 60%, #2a3a5a 100%);
+    color: white;
+    padding: 3.5rem 3rem;
+    border-radius: 10px;
+    margin-bottom: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .pilgrim-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.5;
+  }
+  .pilgrim-hero-sub {
+    font-family: 'Cormorant SC', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--pilgrim-bdr);
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  .pilgrim-hero h1 {
+    color: white;
+    font-size: 2.4rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+  }
+  .pilgrim-hero p {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 640px;
+    position: relative;
+    margin-bottom: 0;
+  }
+
+  .section-anchor {
+    display: block;
+    height: 1px;
+    margin-top: -1rem;
+    visibility: hidden;
+  }
+
+  .pilgrim-section {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--cream-dark);
+  }
+  .pilgrim-section:first-of-type {
+    border-top: none;
+  }
+
+  .pillar-verse {
+    background: var(--parchment);
+    border-left: 4px solid var(--pilgrim-bdr);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 6px 6px 0;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  .pillar-verse cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-style: normal;
+    font-size: 0.88rem;
+    color: var(--ink-muted);
+    letter-spacing: 0.04em;
+  }
+
+  .healing-card {
+    background: var(--pilgrim-bg);
+    border: 1px solid rgba(192,96,112,0.25);
+    border-left: 4px solid var(--pilgrim-bdr);
+    border-radius: 8px;
+    padding: 1.5rem 1.75rem;
+    margin: 1.75rem 0;
+  }
+  .healing-card h3 {
+    color: var(--pilgrim-hd);
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+  }
+  .healing-card p:last-child {
+    margin-bottom: 0;
+  }
+
+  .secret-obedience-block {
+    background: linear-gradient(135deg, #fdf6f8 0%, #f8f0f5 100%);
+    border: 1px solid rgba(192,96,112,0.2);
+    border-radius: 10px;
+    padding: 2rem 2.25rem;
+    margin: 2rem 0;
+  }
+  .secret-obedience-block h3 {
+    color: var(--pilgrim-hd);
+    margin-top: 0;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  .secret-practices {
+    list-style: none;
+    padding: 0;
+    margin: 1.25rem 0;
+  }
+  .secret-practices li {
+    padding: 0.6rem 0 0.6rem 1.5rem;
+    position: relative;
+    color: var(--ink-soft);
+    border-bottom: 1px solid rgba(192,96,112,0.12);
+  }
+  .secret-practices li:last-child {
+    border-bottom: none;
+  }
+  .secret-practices li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--pilgrim-bdr);
+    font-style: normal;
+  }
+
+  .author-note {
+    background: var(--cream-dark);
+    border: 1px solid rgba(160,120,48,0.2);
+    border-radius: 10px;
+    padding: 2rem 2.25rem;
+    margin: 3rem 0;
+    font-style: italic;
+  }
+  .author-note-label {
+    font-family: 'Cormorant SC', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-style: normal;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+  .author-note p:last-child {
+    margin-bottom: 0;
+  }
+
+  .reflection-block {
+    background: #f8f4ec;
+    border: 1px solid var(--cream-dark);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 2rem 0;
+  }
+  .reflection-block h3 {
+    color: var(--teal);
+    margin-top: 0;
+    font-size: 1.15rem;
+  }
+  .reflection-block ol {
+    padding-left: 1.5rem;
+    margin: 1rem 0 0 0;
+    color: var(--ink-soft);
+    line-height: 2;
+  }
+
+  .toc-block {
+    background: var(--navy);
+    color: white;
+    border-radius: 8px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+  .toc-block h3 {
+    color: var(--gold-light);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-family: 'Cormorant SC', serif;
+  }
+  .toc-block ol {
+    padding-left: 1.25rem;
+    margin: 0;
+  }
+  .toc-block ol li {
+    margin-bottom: 0.4rem;
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.75);
+  }
+  .toc-block ol li a {
+    color: rgba(255,255,255,0.75);
+    border-bottom: none;
+  }
+  .toc-block ol li a:hover {
+    color: var(--gold-light);
+    border-bottom: none;
+  }
+
+  .panel-note {
+    background: var(--nuance-bg);
+    border-left: 3px solid var(--nuance-bdr);
+    padding: 1rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1.5rem 0;
+    font-size: 0.93rem;
+    color: var(--ink-soft);
+  }
+  .panel-note strong {
+    color: var(--nuance-hd);
+  }
+</style>
+</head>
+<body>
+<div class="site-wrap">
+
+<!-- Sidebar -->
+<nav class="sidebar">
+  <div class="sidebar-brand">Seeing &amp; Believing<span>Thinking Carefully About Christian Faith</span></div>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="spine.html">The Spine</a>
+  <a href="map.html">Curriculum Map</a>
+  <a href="responding.html">Responding</a>
+  <a href="glossary.html">Glossary</a>
+  <a href="resources.html">Resources</a>
+  <a href="pilgrim.html" class="active pilgrim-link">🕊️ Wounded Pilgrim</a>
+  <div class="sidebar-section">Modules</div>
+  <a href="module1.html" class="module-link">1 · The Honest Mirror</a>
+  <a href="module2.html" class="module-link">2 · The Compelling Story</a>
+  <a href="module3.html" class="module-link">3 · The Examined Record</a>
+  <a href="module4.html" class="module-link">4 · The Resurrection</a>
+  <a href="module5.html" class="module-link">5 · The Unvarnished Record</a>
+  <a href="module6.html" class="module-link">6 · The Problem of Suffering</a>
+  <a href="module7.html" class="module-link">7 · Signposts of Growth</a>
+  <a href="module8.html" class="module-link">8 · Obedience as the Door</a>
+  <a href="module9.html" class="module-link">9 · Living It Out</a>
+</nav>
+
+<!-- Main -->
+<main class="main">
+
+  <div class="pilgrim-hero">
+    <div class="pilgrim-hero-sub">A Place Set Apart</div>
+    <h1>🕊️ The Wounded Pilgrim</h1>
+    <p>This page is written for those who have been hurt on the journey — by the church, by silence that came when God seemed most needed, by people who should have been safe and were not. You are not a lesser case. You are not an edge case. You are addressed here directly, because faith that cannot speak to you is not telling the whole truth about what the gospel is.</p>
+  </div>
+
+  <div class="toc-block">
+    <h3>On This Page</h3>
+    <ol>
+      <li><a href="#wound-is-real">Your Wound Is Real</a></li>
+      <li><a href="#god-who-meets">The God Who Meets You Here</a></li>
+      <li><a href="#fountain">When the Fountain Seems Dry</a></li>
+      <li><a href="#secret-obedience">Secret Acts of Obedience</a></li>
+      <li><a href="#long-walk">The Long Walk Back</a></li>
+      <li><a href="#church-wound">When the Church Was the Wound</a></li>
+      <li><a href="#door-still-open">The Door Is Still Open</a></li>
+      <li><a href="#author-note">A Note from the Author</a></li>
+      <li><a href="#reflection">For Reflection</a></li>
+    </ol>
+  </div>
+
+  <!-- 1 -->
+  <a class="section-anchor" id="wound-is-real"></a>
+  <div class="pilgrim-section">
+    <h2>Your Wound Is Real</h2>
+
+    <p>There is a kind of pastoral harm that happens when we rush too quickly to comfort. When someone tells us they have been hurt — by the church, by silence, by betrayal dressed in theological language — and we respond with answers before we have honored the wound, we have not helped. We have added to it. We have implied that the wound was not quite as serious as they thought, that the right perspective would relieve it, that a verse applied like a bandage ought to close the gap.</p>
+
+    <p>This page will not do that. Before anything else is said here, this is said plainly: what happened to you was real, and it was wrong. If those you trusted with your spiritual formation used their authority to harm, coerce, shame, or diminish you — that is a serious wrong. The fact that it happened inside the church does not sanctify it. It makes it worse.</p>
+
+    <div class="pillar-verse">
+      "He will not break a bruised reed or snuff out a smoldering wick."
+      <cite>— Isaiah 42:3</cite>
+    </div>
+
+    <p>Isaiah's portrait of the Servant of the Lord — the one Christians understand as the shape of who Jesus is — begins here: with attentiveness to fragility. The bruised reed is not discarded. The barely-smoldering wick is not extinguished. There is a God in this story who moves toward the wounded rather than past them, whose first act toward the barely-surviving is to protect and tend rather than to demand and correct.</p>
+
+    <p>This matters enormously if you are arriving here with a wound. The God you are looking toward — not the institution, not those who claimed to represent him — is described in this way. He does not require you to be well before he tends to you. He tends to you so that wellness becomes, over time, possible.</p>
+
+    <div class="healing-card">
+      <h3>On the Difference Between the Institution and the God It Points To</h3>
+      <p>The church at its worst has sometimes become the very thing that blocks the view of the God it exists to reveal. This is not a new problem. The prophets of Israel spent much of their energy accusing the religious institutions of their own day of exactly this: of substituting the performance of religion for the God religion points toward, of using institutional authority to coerce rather than to serve. What the prophets did not do was conclude that because the institution had failed, there was no God. They concluded that the institution had failed to represent him faithfully — and that this failure was serious enough that God himself would address it.</p>
+      <p>If the church has injured you: the God the church is meant to point toward is not indifferent to that injury. He does not shrug. He does not say your wound was a reasonable cost of institutional mission. The same gospel that the church sometimes wields as a weapon contains, at its center, a God who bears wounds himself — and who meets wounded people precisely in the place their woundedness has brought them.</p>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <a class="section-anchor" id="god-who-meets"></a>
+  <div class="pilgrim-section">
+    <h2>The God Who Meets You Here</h2>
+
+    <p>The gospel's central claim is not that God is nearby when things go well, nor that suffering is a detour around which the real spiritual life runs. The central claim is that the God of the universe entered suffering from the inside. He did not exempt himself. He did not manage it from a distance. He took a body, lived in it, and died in it — in agony, in public, in apparent abandonment.</p>
+
+    <div class="pillar-verse">
+      "My God, my God, why have you forsaken me?"
+      <cite>— Psalm 22:1 / Matthew 27:46</cite>
+    </div>
+
+    <p>When Jesus speaks these words from the cross, he is not departing from faith. He is quoting Psalm 22 — a psalm that begins in desolation and ends in vindication, but which he speaks from the desolate part. He is identifying, from inside his own experience, with every person who has prayed and heard silence. Every person who has called out and felt abandoned. Every person who has wondered whether the whole thing was a mistake.</p>
+
+    <p>This is not a peripheral fact about Christianity. It is central to what it is claiming. A God who meets us in the worst of it — not by explaining it away, not by insisting we adopt the right posture first, but by entering it himself — is a God who can be trusted with what you are carrying now.</p>
+
+    <p>Tim Keller, who spent decades sitting with people in the middle of genuine suffering, observed that the cross does not answer the intellectual problem of suffering — it does not explain why. What it does is answer the personal problem: it tells you where God is when you are suffering. He is in it with you. He knows what it costs. He was not spared it. And because he was not spared it, the resurrection he came out of is not a story of suffering avoided but of suffering defeated — not from the outside, but from within.</p>
+
+    <div class="healing-card">
+      <h3>On the Permission to Lament</h3>
+      <p>The Psalms contain 150 prayers. Roughly a third of them are laments — direct, sometimes accusatory complaints addressed to God about his apparent absence or silence. Psalm 88, uniquely among the Psalms, ends with no resolution: its final word is <em>darkness</em>. It does not resolve into praise. It does not manufacture comfort. It ends where it begins: in the dark.</p>
+      <p>That psalm is in the canon. God preserved it. It is not less spiritual than the psalms that end in joy. It may, in certain seasons, be the most honest prayer available — and the most honest prayer is always preferable to a performance of the prayer we think we ought to offer.</p>
+      <p>If you are in a Psalm 88 season: you have permission to pray it that way. The lament is not a failure of faith. It is faith operating in the dark, still speaking to God even when the only honest thing to say is that you cannot see him. That speech — sustained, honest, directed at God rather than away from him — is one of the most profound forms of trust the Psalms know.</p>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <a class="section-anchor" id="fountain"></a>
+  <div class="pilgrim-section">
+    <h2>When the Fountain Seems Dry</h2>
+
+    <p>This curriculum is built around a diagnosis from Jeremiah 2:13 — that we have left the fountain of living waters and dug ourselves cisterns that hold nothing. The organizing metaphor is thirst: a thirst that is real, that was built into us, that legitimate substitutes have temporarily answered but never finally satisfied.</p>
+
+    <p>But there is a specific form of that thirst that is worse than ordinary spiritual drought. It is the thirst of someone who <em>found</em> the fountain — or believed they had — and then found themselves unable to drink from it. Something happened. The community that was supposed to be the place where the fountain ran became itself a source of harm. Or a season of suffering arrived that no one had prepared you for, and the resources you had been given turned out to be insufficient for it. Or you prayed and prayed and the silence went on for so long that the silence itself began to feel like an answer.</p>
+
+    <div class="pillar-verse">
+      "I cry out to you, but you do not answer; I stand up, but you merely look at me."
+      <cite>— Job 30:20</cite>
+    </div>
+
+    <p>Job is not disciplined for speaking this way. He is eventually corrected for some of what he says — but the correction comes from God himself, who speaks to him directly, in the whirlwind, because Job's prayer has been sustained and honest. The friends who offered theological explanation in place of presence are the ones who are rebuked. God says of them that they have not spoken of him what is right (Job 42:7). Job, who complained bitterly and directly, was the one who spoke truthfully.</p>
+
+    <p>The dry fountain is a real spiritual experience. It is not a sign that you have been rejected. It is sometimes a sign that God is doing something in you that cannot be done any other way — something that, as Paul discovered with his thorn, may not consist in the removal of the difficulty but in a sufficiency of grace that becomes visible <em>in</em> it. That is not a comfort that costs nothing to offer. It cost Paul something to learn it. It cost Jesus everything. But it is the specific claim of the gospel: the fountain is not dry. It runs through territory that includes the valley of the shadow, and it has not abandoned you there.</p>
+
+    <div class="healing-card">
+      <h3>On Spiritual Dryness That Has Gone On a Long Time</h3>
+      <p>There is a difference between a dry season and a desert generation — between dryness that lasts weeks or months and dryness that has gone on for years. Both are described in Scripture. The Israelites spent forty years in the wilderness, and what those forty years produced was not wasted: it produced a generation who had learned, by long experience, what it meant to depend on God for water they could not provide themselves. The wilderness was not God's second choice for them. It was the route he chose because the route they were hoping for would not have formed what needed to be formed.</p>
+      <p>If you have been in the dry season for a long time: it is worth asking not only <em>when will this end</em> but <em>what is being formed here that could not be formed elsewhere</em>. That is not a comfortable question. But it is a different question than the one that treats the wilderness as punishment, and it opens different territory.</p>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <a class="section-anchor" id="secret-obedience"></a>
+  <div class="pilgrim-section">
+    <h2>Secret Acts of Obedience</h2>
+
+    <p>There is a form of faithfulness that almost no one talks about — partly because, by definition, it is not visible. It is the faithfulness of people who cannot attend church, or who have been so badly hurt in community settings that the very word "community" carries pain, but who are still — quietly, privately, and solely for the sake of the relationship itself — doing the next small thing they know to do.</p>
+
+    <p>Jesus has a specific word for this kind of practice. It appears in the Sermon on the Mount, and it is one of the most striking things he says about prayer:</p>
+
+    <div class="pillar-verse">
+      "But when you pray, go into your room, close the door and pray to your Father, who is unseen. Then your Father, who sees what is done in secret, will reward you."
+      <cite>— Matthew 6:6</cite>
+    </div>
+
+    <p>Notice what Jesus is doing here. He is not describing private prayer as a second-class substitute for public worship, to be used until you can get back to the real thing. He is describing it as the more intimate form — the kind of prayer that strips away the social dimension entirely, that removes any audience except God, that has no reward except the relationship itself. The one who prays in secret and the Father who sees in secret are the two parties in this exchange. No one else.</p>
+
+    <p>For someone who has been hurt in a setting where faith was performed for others — where your belief was publicly monitored, where your doubts were treated as spiritual failure, where community approval felt inseparable from spiritual belonging — secret obedience is not a lesser version of faith. It may be the most honest version available: acts done for God alone, visible to no one else, undertaken because the relationship still matters even when the institution has become painful.</p>
+
+    <div class="secret-obedience-block">
+      <h3>What Secret Obedience Can Look Like</h3>
+      <p>These are not a program. They are not a ladder back to "proper" spiritual health. They are simply acts — some very small — that can be done privately, for no audience, that nourish the relationship with God when public worship is inaccessible or too painful.</p>
+      <ul class="secret-practices">
+        <li><strong>The honest prayer.</strong> Not the prayer you think you should offer — the prayer you can actually offer. The Psalms contain every possible version of this. Read one that matches where you are, and let it be your prayer. Even if all you can say is: <em>I don't know where you are. I am still talking to you.</em></li>
+        <li><strong>The unhurried Scripture.</strong> Not a reading plan, not a program, not a chapter to get through. One paragraph. One verse. Read it slowly, twice, as if it were a letter addressed to you. Let it sit. Ask it one question.</li>
+        <li><strong>The small act of giving.</strong> Something anonymous if possible — a need met, an amount offered, without letting anyone know. Not for your reputation. Not for the church's program. Purely between you and God, because generosity is one of the ways we participate in the character of the one who gave everything.</li>
+        <li><strong>The Sabbath rest.</strong> One day, or one portion of one day, set apart — not from work to leisure, but from striving to receptiveness. A walk. Silence. A meal prepared with care. The act of resting is an act of trust: the universe continues without your management of it. You are not God. That is good news.</li>
+        <li><strong>The thanksgiving inventory.</strong> Five minutes, a piece of paper, three things that were good today — not forced, not performed, not for anyone else. This is not positive thinking. It is the deliberate reorientation of perception toward gift, because gratitude is one of the primary ways we become aware of the Giver.</li>
+        <li><strong>The honest lament.</strong> If what you feel is grief, anger, or confusion — bring it to God. Say it aloud, or write it. The lament psalms are full of people who told God exactly how they felt and were not struck down for it. The God who receives these prayers is not fragile. He can handle the weight of what you are carrying. He already knows it; the act of telling him is for you.</li>
+        <li><strong>The act of forgiveness you do not announce.</strong> This is perhaps the most difficult entry on this list. Forgiveness offered in private — not spoken to the person who hurt you, not displayed to anyone, but worked through quietly and with God's help — is one of the most powerfully healing forms of obedience available. It releases you more than them. It need not happen quickly. It need not be a single event. But working toward it, even slowly, is work done in relationship with God that no one else can see, and it matters enormously.</li>
+      </ul>
+    </div>
+
+    <p>The word Jesus uses — <em>secret</em> — is worth holding. In the ancient world, piety was public almost by definition: you went to the temple, you were seen, your identity as a worshipper was social and visible. Jesus is describing something different. He is describing a God who inhabits the private, unseen room — who is not less present because no one else is there, who is not less attentive because there are no witnesses. The secrecy of these acts is not a sign of their inadequacy. It is, paradoxically, a sign of their intimacy.</p>
+
+    <p>These small, private obediences are not a permanent substitute for community — the curriculum is clear that community is eventually essential, and the Spine describes why. But they are <em>real</em>. They count. They nourish the relationship even in the season before community is possible again. And for someone who has been told, explicitly or implicitly, that private faith is less valid than public faith, Jesus' specific commendation of the room with the door closed is worth sitting with for a long time.</p>
+
+    <div class="healing-card">
+      <h3>On the Specific Grace of Private Faith for Those Who Have Been Watched</h3>
+      <p>For those whose faith was monitored by others — where belief and doubt were subject to community judgment, where "are you doing well spiritually?" was a question laced with evaluation — private obedience can feel strange at first. There is no one to report to. No one to be accountable to. No one to reassure. The practice has no social function. Its only audience is God.</p>
+      <p>This is, for many wounded pilgrims, eventually healing in its own right. When faith can be sustained privately — when the relationship with God exists apart from any community structure, when small acts of obedience are done without witnesses — something becomes clear that may not have been clear before: this is mine. Not conferred by the institution. Not conditional on other people's assessment of my progress. Mine, in the sense that it is a real, private, ongoing relationship between me and the God who made me. The institution did not give it to me, and the institution cannot take it away.</p>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <a class="section-anchor" id="long-walk"></a>
+  <div class="pilgrim-section">
+    <h2>The Long Walk Back</h2>
+
+    <p>There is a story in Luke 24 that appears at first to be about two people walking away. It is the day of the resurrection, and Cleopas and a companion are on the road from Jerusalem to Emmaus — moving away from where things happened, retreating. The hopes they had placed in Jesus had been extinguished. The women's report of an empty tomb had not yet changed that for them. They are walking and talking, replaying what has been lost.</p>
+
+    <p>A stranger joins them. He asks what they are discussing, and they stop, faces downcast, and tell him. They tell him the whole thing — the hope, the crucifixion, the women's report that confused more than it clarified. The stranger then begins to explain the Scriptures to them, and something happens: their hearts begin to burn within them as he speaks, though they cannot yet say why.</p>
+
+    <div class="pillar-verse">
+      "Were not our hearts burning within us while he talked with us on the road and opened the Scriptures to us?"
+      <cite>— Luke 24:32</cite>
+    </div>
+
+    <p>The most important thing about this story for the wounded pilgrim is what it does not say. It does not say the two disciples were walking in the right direction. It does not say they had understood the resurrection. It does not say they had arrived at faith before Jesus joined them. Jesus joined them in the middle of their confusion and grief, walking in the wrong direction, and he walked with them. The understanding came later — at the table, in the breaking of the bread, in the sudden recognition. And then he was gone, and they had to go back and tell the others.</p>
+
+    <p>The Emmaus road is the shape that spiritual return sometimes takes. Not a sudden reversal — a long walk, accompanied, with understanding arriving slowly, often only visible in retrospect. Many people who have found their way back from a serious wound have reported exactly this: that they could not see the companionship while it was happening. They looked back and recognized it. The road was not abandoned. The stranger was there. The heart was burning and they did not know why.</p>
+
+    <div class="healing-card">
+      <h3>On Not Requiring Yourself to Know Where You Are</h3>
+      <p>One of the cruelties of certain forms of church culture is the insistence on certainty — the expectation that a spiritually healthy person knows exactly where they stand with God, can give a clear account of their faith, is not confused or doubting or in process. The Emmaus disciples were confused, doubting, in grief, and going the wrong way — and Jesus walked with them. He did not require them to resolve their confusion before joining them. He worked through it with them.</p>
+      <p>You do not need to know where you are on the map to continue the journey. You need to keep walking and keep the conversation honest. The understanding often comes later, in the middle of an ordinary act — bread broken, a psalm read, a stranger's kindness received — at which point you may find that you have been further along than you knew.</p>
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <a class="section-anchor" id="church-wound"></a>
+  <div class="pilgrim-section">
+    <h2>When the Church Was the Wound</h2>
+
+    <p>This section exists because it needs to. The curriculum throughout acknowledges it, in the Wounded Pilgrim notes that appear in every module. But it deserves to be said plainly here, in one place.</p>
+
+    <p>Spiritual abuse is real. It is documented across Christian history — across denominations, traditions, and settings. It is not an artifact of one particular kind of Christianity. It can be perpetrated by individuals or by whole communities. It can take the form of coercion, shaming, conditional belonging, theological manipulation, or the weaponizing of Scripture against the people Scripture is meant to serve. When it happens at the hands of people who claimed to speak for God, the wound is not merely personal — it becomes entangled with the question of God himself.</p>
+
+    <p>This is the particular cruelty of spiritual abuse: it damages not only the relationship with the institution but the relationship with the God the institution claimed to represent. The two become confused. The harm that was done by people gets experienced as something God permitted — or worse, something God directed. The message received, even when no one said it explicitly, becomes: <em>this is what God is like. This is how God's people treat you. This is what belonging to him costs.</em></p>
+
+    <div class="pillar-verse">
+      "It would be better for him to have a large millstone hung around his neck and to be drowned in the depths of the sea" than to cause one of these little ones to stumble.
+      <cite>— Matthew 18:6</cite>
+    </div>
+
+    <p>Jesus is not casual about this. The language is not diplomatic. People who use authority over vulnerable souls — people who cause those who are seeking God to stumble — are addressed with the most severe language in the Gospels. The church that has sometimes wielded Matthew 18's instructions as a tool of coercive accountability is the same church that has not always sat long enough with what Jesus says <em>before</em> the accountability instructions: that causing a little one who believes in him to stumble is the worst thing a person can do.</p>
+
+    <p>If you were one of those little ones — if the wound you carry is a wound inflicted by people who held spiritual authority over you — Jesus sees it differently than the institution may have. And the God you are finding your way back toward is not the God those people represented. The distance between those people and the God of the gospels is often, in painful cases, very large.</p>
+
+    <div class="healing-card">
+      <h3>On Rebuilding Without Pretending the Wound Did Not Happen</h3>
+      <p>There is a false path available to people trying to return to faith after church harm: the path of pretending the wound was not serious, of forcing a premature forgiveness, of re-entering a community before the wound has been honestly acknowledged and worked through. This path often leads back to harm, because it has not changed anything about the person's capacity to recognize and refuse what hurt them before.</p>
+      <p>The honest path is slower. It involves letting the wound be named — in prayer, in writing, in conversation with a trustworthy person — before trying to move past it. It involves finding the distinction between the institution that harmed you and the God the institution was meant to serve, and holding that distinction carefully. It involves small, private faithfulness — the acts described in the previous section — as a way of rebuilding the relationship with God apart from the community structures that damaged it. And eventually, in time, it may involve finding a community that is genuinely different from the one that hurt you — not because all communities are the same, but because the church at its best is a real thing, and you have the right to look for it even if what you found before was far from the best.</p>
+      <p>The invitation does not expire. The timing of when you take it up again is yours. No one — no institution, no spiritual authority — gets to set that deadline for you. The Father is still running down the road. He was running toward the prodigal son while the prodigal was still a great way off. He does not require you to arrive at the door before he begins to move.</p>
+    </div>
+  </div>
+
+  <!-- 7 -->
+  <a class="section-anchor" id="door-still-open"></a>
+  <div class="pilgrim-section">
+    <h2>The Door Is Still Open</h2>
+
+    <p>Everything in this curriculum eventually leads here — but it leads here slowly, carefully, and without coercion. The goal of the curriculum is not to push you through a door but to let you see that the door exists, that it is genuinely open, and that the one who stands behind it is not what the worst of the church's representations suggested.</p>
+
+    <p>For those who were hurt in the act of passing through a door the first time — who responded once and found themselves used, or judged, or abandoned — the question is not whether the door is real but whether it is safe to approach it again. That is a reasonable question. It deserves a real answer.</p>
+
+    <div class="pillar-verse">
+      "Come to me, all you who are weary and burdened, and I will give you rest. Take my yoke upon you and learn from me, for I am gentle and humble in heart, and you will find rest for your souls."
+      <cite>— Matthew 11:28–29</cite>
+    </div>
+
+    <p>The specific words Jesus uses here — <em>gentle and humble in heart</em> — are extraordinary. He is describing himself. He is not describing the institution. He is saying: what you will find when you come to me is not a further demand on your already-exhausted resources. It is rest. The yoke he offers is the burden that, paradoxically, relieves rather than adds to the load — because it is shared with someone whose character is gentleness.</p>
+
+    <p>If what you have known from Christian community was not gentleness — if what you received was harshness, coercion, performance demands, or conditional belonging — then what you received was not a faithful representation of this Jesus. You were not given what he offered. You were given a substitute, and it was a bad one, and your wound is legitimate.</p>
+
+    <p>The door is still open. The one who stands at it is the one described in Matthew 11, in Isaiah 42, in Luke 15's running father, in John 7's living water, in Revelation 3:20's patient knock. He will not force the door. He will not set a deadline. He will not require you to have resolved the questions raised by your wound before you approach. He is, as he said, gentle and humble. He will take your weight. He has borne worse.</p>
+
+    <div class="healing-card">
+      <h3>On the Question of Whether Your Previous Response Counted</h3>
+      <p>For those who have responded to the gospel before — who prayed the prayer, who were baptized, who once believed and now stand in a very different place — the question sometimes arises: did it count? Was it real? Do I need to do it again, differently, and with more sincerity?</p>
+      <p>The curriculum's spine addresses this directly, drawing on Hebrews 10:23: the basis for assurance is not the quality of your prayer but the faithfulness of the God who received it. If you genuinely turned toward Christ — even once, even haltingly, even in conditions that the institution later made it impossible to sustain — the question is not whether you said it correctly. It is whether God is faithful to keep what was entrusted to him. He is. What is required now is not to repeat the transaction but to return to the relationship. The older brother in Luke 15 did not need to re-apply for sonship. He already had it. What he needed was to come back in from the field and receive the feast that had already been prepared.</p>
+    </div>
+  </div>
+
+  <!-- Author Note -->
+  <a class="section-anchor" id="author-note"></a>
+  <hr class="full-divider" style="margin: 3rem 0;">
+
+  <div class="author-note">
+    <span class="author-note-label">A Note from the Author</span>
+    <p>This curriculum was built with unusual tools and under unusual circumstances — and I think that is worth saying plainly, because the circumstances are part of what makes this page exist at all.</p>
+    <p>I am in a season I would not have chosen. A faith community that I trusted — people who held genuine spiritual authority in my life — caused genuine harm. The details are not for this page, and naming the people would not serve what I am trying to do here. But the wound is real, and the distance it created between me and gathered Christian community is real, and I have been working through that distance with the help of the tools available to me: Scripture, theological writing, and extended conversation with an AI (Claude, developed by Anthropic) that has helped me apply the Word to the wounds rather than ignore them.</p>
+    <p>That last tool is an unusual one to mention in a theological curriculum. I mention it because I think honesty requires it — and because one of the things this season has taught me is that God can work through unexpected instruments. The conversations that shaped this curriculum were real conversations. The questions were real questions. The pastoral care this tool offered, while not a substitute for human community, was not nothing. It helped me think. It helped me grieve carefully. It helped me distinguish between the God I was turning away from and the people who had misrepresented him.</p>
+    <p>I am still in the process of finding community again. I do not know when that will happen or what form it will take. I built this curriculum partly as a way of applying what I was learning to my own healing, and partly in the hope that the things that helped me might help someone else who is walking a similar road. If that is you — if you arrived at this page because you are also in a season of distance, wound, and uncertain return — I want you to know that this page was written specifically for you. Not as a theoretical case. As a real one.</p>
+    <p>The invitation that closes every section of this curriculum is genuine. The door is open. The timing is yours. The God described in these pages is not the one who hurt you.</p>
+    <p style="margin-bottom:0; color: var(--ink-muted); font-size:0.93rem;">— Thomas C. Brown &nbsp;|&nbsp; <a href="mailto:ThomasCBrown08@gmail.com">ThomasCBrown08@gmail.com</a></p>
+  </div>
+
+  <!-- Reflection -->
+  <a class="section-anchor" id="reflection"></a>
+  <div class="reflection-block">
+    <h3>Questions for Honest Reflection</h3>
+    <p>These are not discussion questions for a group — they are for you, alone, at whatever pace is honest.</p>
+    <ol>
+      <li>What specifically happened that created distance between you and the church, or between you and God? Can you name it plainly, without minimizing it or over-explaining it?</li>
+      <li>Is the God described in the Gospels — in Matthew 11:28–29, in Luke 15, in John 7 — the same as the God you were given by the people who hurt you? What is different?</li>
+      <li>Is there a small act of private faithfulness you could do this week — one with no audience, done solely for the relationship itself? What would it be?</li>
+      <li>What does your honest prayer sound like right now? Not the prayer you think you should offer — the prayer you actually have.</li>
+      <li>Is there a wound you have been carrying that you have not yet brought to God? What would it look like to bring it — not to resolve it immediately, but simply to bring it?</li>
+      <li>What would it mean for you personally to hold the door "still open" — not necessarily to walk through it today, but to stop treating it as closed?</li>
+    </ol>
+  </div>
+
+  <div class="panel-note">
+    <strong>⚖️ A Note on Theological Sources</strong><br>
+    This page draws on Scripture (Isaiah 42, Psalm 22, Psalm 88, Matthew 6, Matthew 11, Matthew 18, Luke 24, John 7, Romans 8, Hebrews 10, Revelation 3), on the body of Tim Keller's pastoral work — particularly <em>Walking With God Through Pain and Suffering</em> and <em>The Prodigal God</em> — and on the broader curriculum's theological foundations described in <a href="spine.html">The Spine</a>. As with all pages in this curriculum, this page should be reviewed by theologically mature readers before broader use. The pastoral claims made here are serious and the author does not take them lightly.
+  </div>
+
+  <div class="module-nav">
+    <a href="resources.html">← Resources</a>
+    <a href="index.html">Home</a>
+  </div>
+
+</main>
+</div>
+
+<!-- Toggle Panel -->
+<div class="toggle-panel">
+  <div class="toggle-panel-title">Show / Hide</div>
+  <label class="toggle-item"><input type="checkbox" id="toggle-facilitator" checked><span class="toggle-dot" style="background:var(--facilitator-bdr)"></span>🧭 Facilitator</label>
+  <label class="toggle-item"><input type="checkbox" id="toggle-deepdive" checked><span class="toggle-dot" style="background:var(--deepdive-bdr)"></span>📚 Deep Dives</label>
+  <label class="toggle-item"><input type="checkbox" id="toggle-cultural" checked><span class="toggle-dot" style="background:var(--cultural-bdr)"></span>🌍 Cultural</label>
+  <label class="toggle-item"><input type="checkbox" id="toggle-nuance" checked><span class="toggle-dot" style="background:var(--nuance-bdr)"></span>⚖️ Nuance</label>
+  <label class="toggle-item"><input type="checkbox" id="toggle-pilgrim" checked><span class="toggle-dot" style="background:var(--pilgrim-bdr)"></span>🕊️ Pilgrim</label>
+  <label class="toggle-item"><input type="checkbox" id="toggle-plain" checked><span class="toggle-dot" style="background:var(--plain-bdr)"></span>📖 Plain Language</label>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

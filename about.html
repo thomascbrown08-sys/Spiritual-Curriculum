@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About This Curriculum — Seeing and Believing</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ── About Page Specific ──────────────────────────────────── */
+  .about-hero {
+    margin-bottom: 2.5rem;
+  }
+  .about-hero .page-label {
+    font-family: 'Cormorant SC', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  .about-card {
+    background: var(--parchment);
+    border: 1px solid var(--cream-dark);
+    border-radius: 10px;
+    padding: 2rem 2.25rem;
+    margin: 2rem 0;
+  }
+  .about-card h3 {
+    margin-top: 0;
+    color: var(--navy);
+    font-size: 1.2rem;
+    margin-bottom: 0.9rem;
+  }
+  .about-card p:last-child { margin-bottom: 0; }
+
+  .principle-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin: 1.75rem 0;
+  }
+  .principle-item {
+    background: var(--cream-dark);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    border-top: 3px solid var(--teal);
+  }
+  .principle-item h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--teal);
+    font-size: 1rem;
+  }
+  .principle-item p {
+    font-size: 0.93rem;
+    margin-bottom: 0;
+    color: var(--ink-soft);
+  }
+
+  /* ── Author Section ──────────────────────────────────────── */
+  .author-section {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--cream-dark);
+  }
+  .author-section-label {
+    font-family: 'Cormorant SC', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .author-intro {
+    color: var(--ink-soft);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Toggle for personal statement */
+  .story-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: 1px solid var(--cream-dark);
+    border-radius: 6px;
+    padding: 0.55rem 1rem;
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.92rem;
+    color: var(--ink-muted);
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+    margin-bottom: 0;
+  }
+  .story-toggle-btn:hover {
+    border-color: var(--teal-light);
+    color: var(--teal);
+  }
+  .story-toggle-btn .arrow {
+    font-size: 0.75rem;
+    transition: transform 0.25s;
+    display: inline-block;
+  }
+  .story-toggle-btn.open .arrow {
+    transform: rotate(90deg);
+  }
+
+  .personal-story {
+    display: none;
+    margin-top: 1.5rem;
+    padding: 2rem 2.25rem;
+    background: #f8f4ec;
+    border: 1px solid var(--cream-dark);
+    border-radius: 10px;
+    font-style: italic;
+    color: var(--ink-soft);
+    line-height: 1.85;
+  }
+  .personal-story.visible {
+    display: block;
+  }
+  .personal-story p:last-child { margin-bottom: 0; }
+  .personal-story strong {
+    font-style: normal;
+  }
+  .personal-story .story-close {
+    display: block;
+    margin-top: 1.5rem;
+    font-style: normal;
+    font-size: 0.88rem;
+    color: var(--ink-muted);
+    cursor: pointer;
+    text-align: right;
+    border: none;
+    background: none;
+    font-family: 'Crimson Pro', serif;
+  }
+  .personal-story .story-close:hover {
+    color: var(--teal);
+  }
+
+  /* ── Panel / Review note ─────────────────────────────────── */
+  .review-note {
+    background: var(--nuance-bg);
+    border-left: 3px solid var(--nuance-bdr);
+    padding: 1rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+    margin: 2rem 0;
+    font-size: 0.93rem;
+    color: var(--ink-soft);
+  }
+  .review-note strong { color: var(--nuance-hd); }
+
+  /* ── Prayer ──────────────────────────────────────────────── */
+  .prayer-block {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--cream-dark);
+  }
+  .prayer-label {
+    font-family: 'Cormorant SC', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 1.25rem;
+  }
+  .prayer-text {
+    background: var(--navy);
+    color: rgba(255,255,255,0.82);
+    border-radius: 10px;
+    padding: 2.25rem 2.5rem;
+    font-style: italic;
+    line-height: 2;
+    font-size: 1rem;
+  }
+  .prayer-text p { color: rgba(255,255,255,0.82); margin-bottom: 1rem; }
+  .prayer-text p:last-child { margin-bottom: 0; }
+  .prayer-text .amen {
+    font-style: normal;
+    color: var(--gold-light);
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: 0.1em;
+    font-size: 1.05rem;
+    margin-top: 1.25rem;
+  }
+</style>
+</head>
+<body>
+<div class="site-wrap">
+
+<!-- Sidebar -->
+<nav class="sidebar">
+  <div class="sidebar-brand">Seeing &amp; Believing<span>Thinking Carefully About Christian Faith</span></div>
+  <a href="index.html">Home</a>
+  <a href="about.html" class="active">About</a>
+  <a href="spine.html">The Spine</a>
+  <a href="map.html">Curriculum Map</a>
+  <a href="responding.html">Responding</a>
+  <a href="glossary.html">Glossary</a>
+  <a href="resources.html">Resources</a>
+  <a href="pilgrim.html" class="pilgrim-link">🕊️ Wounded Pilgrim</a>
+  <div class="sidebar-section">Modules</div>
+  <a href="module1.html" class="module-link">1 · The Honest Mirror</a>
+  <a href="module2.html" class="module-link">2 · The Compelling Story</a>
+  <a href="module3.html" class="module-link">3 · The Examined Record</a>
+  <a href="module4.html" class="module-link">4 · The Resurrection</a>
+  <a href="module5.html" class="module-link">5 · The Unvarnished Record</a>
+  <a href="module6.html" class="module-link">6 · The Problem of Suffering</a>
+  <a href="module7.html" class="module-link">7 · Signposts of Growth</a>
+  <a href="module8.html" class="module-link">8 · Obedience as the Door</a>
+  <a href="module9.html" class="module-link">9 · Living It Out</a>
+</nav>
+
+<!-- Main -->
+<main class="main">
+
+  <div class="about-hero">
+    <span class="page-label">About This Curriculum</span>
+    <h1>Seeing and Believing</h1>
+    <p class="page-subtitle" style="font-size:1.15rem; color:var(--ink-muted); margin-top:0.25rem;">What it is. How it was made. Why it exists.</p>
+  </div>
+
+  <h2>What This Curriculum Is</h2>
+  <p>Most introductions to Christian faith are built around a single type of evidence — historical, philosophical, experiential — and ask the reader to evaluate that evidence and decide. <em>Seeing and Believing</em> does something different. It takes seriously the observation in John 7:17 that understanding follows the intent to obey: that spiritual perception is not purely a pre-condition of movement, but something that often comes in the middle of it.</p>
+  <p>The curriculum is built for three kinds of reader: those beginning to move toward Christian faith; those who have already begun and want to understand what they are moving toward; and those who want to think more carefully about questions the church has not always handled well. It draws on historical, psychological, literary, moral, and personal evidence — because the case for Christian faith is not thin enough to rest on just one.</p>
+  <p>It is not an argument that bypasses doubt. It is an invitation to move toward the light with whatever degree of intention is honestly available, and to see what becomes visible from there.</p>
+
+  <div class="principle-row">
+    <div class="principle-item">
+      <h4>Honest about hard questions</h4>
+      <p>The curriculum does not avoid the questions that cause real people to walk away from faith. Suffering, doubt, the failures of the church, the reliability of Scripture — these are addressed directly, not managed.</p>
+    </div>
+    <div class="principle-item">
+      <h4>Charitable across disagreements</h4>
+      <p>Christians have divided sharply over questions that, looked at carefully, often don't require the division. Where genuine disagreement exists, the curriculum names it and holds it without forcing a verdict.</p>
+    </div>
+    <div class="principle-item">
+      <h4>Accessible without being thin</h4>
+      <p>The material aims to treat every reader as someone capable of thinking clearly, without explaining so much that the thinking is done for them. If it falls short of that for you, the author wants to know.</p>
+    </div>
+    <div class="principle-item">
+      <h4>Attentive to the wounded</h4>
+      <p>Every module contains material specifically addressed to those who have been hurt by the church, those in seasons of spiritual dryness, and those who wonder if the door is still open after a long absence.</p>
+    </div>
+  </div>
+
+  <h2>How It Was Made</h2>
+  <p>The curriculum was built by one person, working through a combination of theological reading, personal engagement with Scripture, and extended use of AI assistance — specifically Claude, developed by Anthropic — for research, drafting, and the kind of careful reasoning that benefits from a tireless conversation partner.</p>
+  <p>The use of AI in theological work is worth being honest about. The tool is useful for research, for surfacing connections across a wide body of material, and for articulating ideas that have been circling without landing. It is not a substitute for theological judgment, pastoral wisdom, or the kind of understanding that comes from lived experience. Every section of this curriculum has been authored by a human and is intended to be reviewed by theologically mature readers before broader use. The AI accelerated and clarified; it did not replace.</p>
+  <p>The curriculum draws throughout on the work of Timothy Keller — particularly his approach to finding third ways between polarized theological positions, and the tone of pastoral honesty he modeled in works like <em>Walking With God Through Pain and Suffering</em> and <em>The Prodigal God.</em> It draws on Reformed, Catholic, and Anabaptist traditions, on academic biblical scholarship, and on the broader history of Christian spiritual formation. Sources are noted throughout; errors in attribution or theological nuance are the author's responsibility, not the tradition's.</p>
+
+  <div class="review-note">
+    <strong>⚖️ A note on review:</strong> This curriculum is a living document. It has not been formally reviewed by a theological panel, though that review is intended. If you find something that needs correcting — in theology, in pastoral judgment, or in tone — your response is not just welcome but needed. Please write to <a href="mailto:ThomasCBrown08@gmail.com">ThomasCBrown08@gmail.com</a>.
+  </div>
+
+  <h2>Why It Exists</h2>
+  <p>For years there has been a patchwork of half-formed ideas — connections between Scripture and history, between theology and ordinary human experience — wanting to take shape and be shared. Christianity, honestly presented, is genuinely beautiful. The truth of God stated cleanly is one of the pleasures that survives even dry seasons. This curriculum is an attempt to state some of it clearly.</p>
+  <p>It was built for anyone ashamed, hurt, or excluded. For the person perfectly desperate for encouragement that doesn't come with strings attached or a fixing agenda. Maybe you will walk through the Dry Valley and know, because someone left a marker, that others have been here and kept walking — not because they were strong, but because they were reminded that God is faithful. Others were that reminder for the author of this curriculum. This is his attempt to pass it on.</p>
+  <p><strong>This site is meant to preach to its author first, then to others.</strong></p>
+
+  <!-- Author Section -->
+  <div class="author-section">
+    <span class="author-section-label">A Note from the Author</span>
+    <p class="author-intro">The curriculum was written by Thomas C. Brown. Questions and corrections are genuinely welcome at <a href="mailto:ThomasCBrown08@gmail.com">ThomasCBrown08@gmail.com</a>.</p>
+    <p class="author-intro" style="color:var(--ink-muted); font-size:0.95rem;">For those who want to understand more about where this curriculum came from — the personal circumstances that shaped it — that account is here. It is optional reading. The curriculum stands without it.</p>
+
+    <button class="story-toggle-btn" id="storyToggle" onclick="toggleStory()">
+      <span class="arrow">▶</span> Read the author's story
+    </button>
+
+    <div class="personal-story" id="personalStory">
+      <p>This site began as an honest attempt to sort through my own faith — not to teach, but to find my footing again after a long time away from it.</p>
+      <p>I have spent years in real distance from God and from the church. Some of that distance I caused. Some of it was caused by people who should have been safe and were not. I am not going to pretend those two things come apart neatly, because they don't. What I can say is that I never stopped believing in Jesus — but I have felt detached and discouraged for a long time, and the warmth that faith is supposed to carry had gone very cold. <strong>To never be trusted again is a very hard sentence.</strong> I have been living under a version of that sentence, and part of building this has been slowly coming to understand that God does not pronounce it.</p>
+      <p>Perhaps this is the Prodigal coming yet again to his senses. I am not ashamed to say so.</p>
+      <p>The curriculum took the shape it took because I kept running into the same frustration: Christians dividing sharply over questions that, looked at more carefully, don't require the division — and doing it uncharitably, which makes everything worse. I have learned more from people like Timothy Keller — who had the patience to find the third way between errors, and the charity to hold it without condescension — than from almost anyone else. I have very little of that patience naturally. I am trying to grow some.</p>
+      <p>This work is my act of faithfulness right now. It is my attempt to draw on what God's Word has produced — in me, in the tradition, in the people who have thought carefully before me — and share it as clearly as I can. I feel the strangeness of using a lifeless instrument to handle sacred material. I also feel the strangeness of not using what was available. I am trying to be honest about which instruments I used, because this curriculum asks others to be honest, and I cannot hold that standard without holding it myself.</p>
+      <p>There are questions embedded in this curriculum I cannot yet fully answer from my own experience. I offer what I have, not what I wish I had. I am still in the middle of the story.</p>
+      <button class="story-close" onclick="toggleStory()">▲ Close</button>
+    </div>
+  </div>
+
+  <!-- Prayer -->
+  <div class="prayer-block">
+    <span class="prayer-label">A Prayer for Those Who Come Here</span>
+    <div class="prayer-text">
+      <p>Lord,</p>
+      <p>This work was done in a dry season, with imperfect tools, by a person who needed it as much as anyone who might find it. We do not offer it as something finished or sufficient. We offer it as a signpost — the best one we could make — pointing toward the One who has not moved.</p>
+      <p>Bless those who find their way here in confusion or grief. Give them patience for the long road, and the particular grace of being honest with you when they cannot yet be confident in you. Remind them that the fountain is real — that the thirst they carry is the best evidence they have that something is worth thirsting for, and that you have been running toward them since before they turned.</p>
+      <p>For those who have been wounded by the church: let this place feel different from what wounded them. Let the tone here be the tone you actually take with bruised reeds and smoldering wicks. Forgive us where we have failed that standard.</p>
+      <p>For the one who built this: refresh what has grown dry. Restore what was taken or lost. Lead him, in your time, back to community — the real kind, the healing kind, the kind this curriculum describes but which he has not yet found. Hold what was entrusted to you. You have said you would. We are counting on that.</p>
+      <p>Whatever good this does, let it be yours. Whatever error it contains, give someone the wisdom to catch it and the charity to say so gently.</p>
+      <p class="amen">Amen.</p>
+    </div>
+  </div>
+
+  <div class="module-nav" style="margin-top:3rem;">
+    <a href="index.html">← Home</a>
+    <a href="spine.html">The Spine →</a>
+  </div>
+
+</main>
+</div>
+
+<!-- Toggle Panel -->
+<div class="toggle-panel">
+  <div class="toggle-panel-title">Show / Hide</div>
+  <label class="toggle-item"><input type="checkbox" id="toggle-facilitator" checked><span class="toggle-dot" style="background:var(--facilitator-bdr)"></span>🧭 Facilitator</label>
+  <label class="toggle-item"><input type="checkbox" id="toggle-deepdive" checked><span class="toggle-dot" style="background:var(--deepdive-bdr)"></span>📚 Deep Dives</label>
+  <label class="toggle-item"><input type="checkbox" id="toggle-cultural" checked><span class="toggle-dot" style="background:var(--cultural-bdr)"></span>🌍 Cultural</label>
+  <label class="toggle-item"><input type="checkbox" id="toggle-nuance" checked><span class="toggle-dot" style="background:var(--nuance-bdr)"></span>⚖️ Nuance</label>
+  <label class="toggle-item"><input type="checkbox" id="toggle-pilgrim" checked><span class="toggle-dot" style="background:var(--pilgrim-bdr)"></span>🕊️ Pilgrim</label>
+  <label class="toggle-item"><input type="checkbox" id="toggle-plain" checked><span class="toggle-dot" style="background:var(--plain-bdr)"></span>📖 Plain Language</label>
+</div>
+
+<script src="script.js"></script>
+<script>
+function toggleStory() {
+  const story = document.getElementById('personalStory');
+  const btn = document.getElementById('storyToggle');
+  const isVisible = story.classList.contains('visible');
+  if (isVisible) {
+    story.classList.remove('visible');
+    btn.classList.remove('open');
+    btn.querySelector('.arrow').textContent = '▶';
+    btn.childNodes[1].textContent = ' Read the author\'s story';
+  } else {
+    story.classList.add('visible');
+    btn.classList.add('open');
+    btn.querySelector('.arrow').textContent = '▶';
+    btn.childNodes[1].textContent = ' Close the author\'s story';
+    story.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+}
+</script>
+</body>
+</html>
