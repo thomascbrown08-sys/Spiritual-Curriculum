@@ -6,6 +6,7 @@
     { id: 'toggle-cultural',    cls: 'hide-cultural',    key: 'sb-cultural'    },
     { id: 'toggle-nuance',      cls: 'hide-nuance',      key: 'sb-nuance'      },
     { id: 'toggle-pilgrim',     cls: 'hide-pilgrim',     key: 'sb-pilgrim'     },
+    { id: 'toggle-plain',       cls: 'hide-plain',       key: 'sb-plain'       },
   ];
 
   function applyState(t, checked) {
