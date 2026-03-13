@@ -299,6 +299,17 @@
       <p>There are questions embedded in this curriculum I cannot yet fully answer from my own experience. I offer what I have, not what I wish I had. I am still in the middle of the story.</p>
       <button class="story-close" onclick="toggleStory()">▲ Close</button>
     </div>
+
+    <button class="story-toggle-btn" id="disclosureToggle" onclick="toggleDisclosure()" style="margin-top:0.75rem;">
+      <span class="arrow">▶</span> A note on authorship and tools
+    </button>
+
+    <div class="personal-story" id="disclosurePanel">
+      <p>This curriculum was built as a bootstrap — a deliberate attempt to make use of the tools and resources available to get moving again in faith, rather than waiting for conditions that might never arrive.</p>
+      <p>In practice, that meant using Claude (an AI developed by Anthropic) not as an occasional drafting aid, but as the primary instrument of production. The direction is mine: the theological questions being asked, the traditions being weighed, the pastoral instincts being followed or resisted, the overall architecture of what this should be and for whom. The production is largely Claude's: the drafting, the research, the careful articulation of ideas I brought only in outline. That is a different kind of authorship than a reader might reasonably assume, and it deserves to be named plainly.</p>
+      <p>I am also aware of what this arrangement cannot provide on its own. An AI can reason carefully about theology; it cannot replace the judgment of someone who has spent decades in pastoral practice, or the correction that comes from a community of theologically mature readers engaging the material together. Both of those forms of oversight are still needed here, and I hold the curriculum loosely until they happen. If something needs correcting — in theology, in pastoral judgment, or in tone — that is not a courtesy to me. It is how this becomes something better than one person bootstrapping their way back toward God could produce alone.</p>
+      <button class="story-close" onclick="toggleDisclosure()">▲ Close</button>
+    </div>
   </div>
 
   <!-- Prayer -->
@@ -340,6 +351,23 @@ function toggleStory() {
     btn.querySelector('.arrow').textContent = '▶';
     btn.childNodes[1].textContent = ' Close the author\'s story';
     story.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+}
+function toggleDisclosure() {
+  const panel = document.getElementById('disclosurePanel');
+  const btn = document.getElementById('disclosureToggle');
+  const isVisible = panel.classList.contains('visible');
+  if (isVisible) {
+    panel.classList.remove('visible');
+    btn.classList.remove('open');
+    btn.querySelector('.arrow').textContent = '▶';
+    btn.childNodes[1].textContent = ' A note on authorship and tools';
+  } else {
+    panel.classList.add('visible');
+    btn.classList.add('open');
+    btn.querySelector('.arrow').textContent = '▶';
+    btn.childNodes[1].textContent = ' Close';
+    panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 }
 </script>
