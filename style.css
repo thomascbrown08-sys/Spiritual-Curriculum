@@ -742,3 +742,247 @@ em { font-style: italic; }
 }
 
 .cross-link-note a { color: var(--teal); border-bottom: 1px dashed var(--teal-light); }
+
+
+/* ── Print Stylesheet ─────────────────────────────────────── */
+@media print {
+
+  /* Page setup */
+  @page {
+    size: letter;
+    margin: 1in 0.9in 1in 0.9in;
+  }
+
+  @page :first {
+    margin-top: 0.75in;
+  }
+
+  /* Base: white background, black ink throughout */
+  *, *::before, *::after {
+    background: #fff !important;
+    color: #111 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Hide chrome elements */
+  .sidebar,
+  .mobile-nav-bar,
+  .nav-overlay,
+  .module-nav,
+  .toggle-panel,
+  .hamburger {
+    display: none !important;
+  }
+
+  /* Full-width main */
+  .site-wrap { display: block !important; }
+
+  .main {
+    margin-left: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Typography */
+  body {
+    font-size: 11pt;
+    line-height: 1.6;
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+
+  h1 {
+    font-size: 22pt;
+    border-bottom: 2pt solid #111;
+    padding-bottom: 6pt;
+    margin-bottom: 12pt;
+    page-break-after: avoid;
+  }
+
+  h2 {
+    font-size: 15pt;
+    margin-top: 18pt;
+    margin-bottom: 6pt;
+    page-break-after: avoid;
+  }
+
+  h3 {
+    font-size: 12pt;
+    margin-top: 12pt;
+    page-break-after: avoid;
+  }
+
+  /* Page header block */
+  .page-header {
+    border-bottom: 2pt solid #111;
+    padding-bottom: 10pt;
+    margin-bottom: 18pt;
+  }
+
+  .page-label {
+    font-size: 8pt;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #555 !important;
+    margin-bottom: 4pt;
+  }
+
+  .page-subtitle {
+    font-size: 12pt;
+    font-style: italic;
+    color: #333 !important;
+    margin-top: 4pt;
+  }
+
+  .sequence-note {
+    font-size: 9pt;
+    color: #555 !important;
+    border: 1pt solid #ccc;
+    padding: 5pt 8pt;
+    margin-top: 8pt;
+  }
+
+  /* Boxes: light border only, no background tint */
+  .box {
+    border: 1pt solid #888 !important;
+    border-left: 3pt solid #333 !important;
+    padding: 8pt 10pt !important;
+    margin: 12pt 0 !important;
+    page-break-inside: avoid;
+  }
+
+  .box-facilitator  { border-left-color: #7a5c10 !important; }
+  .box-deepdive     { border-left-color: #1d4e4c !important; }
+  .box-cultural     { border-left-color: #3a5a30 !important; }
+  .box-nuance       { border-left-color: #5a3a78 !important; }
+  .box-pilgrim      { border-left-color: #8a2030 !important; }
+  .box-plain        { border-left-color: #2a4a78 !important; }
+
+  .box-title {
+    font-size: 9pt !important;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 5pt !important;
+  }
+
+  /* Discussion questions */
+  .discussion {
+    border: 1pt solid #888 !important;
+    padding: 8pt 10pt !important;
+    page-break-inside: avoid;
+  }
+
+  .discussion-label {
+    font-size: 9pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 5pt;
+  }
+
+  /* Links: show URL for external, suppress for same-domain anchors */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    color: #555 !important;
+    word-break: break-all;
+  }
+
+  a[href^="#"]::after,
+  a[href$=".html"]::after,
+  a[href*=".html#"]::after {
+    content: "" !important;
+  }
+
+  /* Suppress toggle controls and hidden-by-default boxes */
+  .toggle-panel,
+  [style*="display:none"],
+  [style*="display: none"] {
+    display: none !important;
+  }
+
+  /* Force visible all boxes when printing (respect reader intent) */
+  .box-facilitator,
+  .box-deepdive,
+  .box-cultural,
+  .box-nuance,
+  .box-pilgrim,
+  .box-plain {
+    display: block !important;
+  }
+
+  /* Module grid on map page */
+  .module-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8pt !important;
+  }
+
+  .module-card {
+    border: 1pt solid #888 !important;
+    padding: 6pt 8pt !important;
+    page-break-inside: avoid;
+  }
+
+  .module-card-num {
+    font-size: 8pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* Glossary terms */
+  .glossary-term {
+    page-break-inside: avoid;
+    border-bottom: 0.5pt solid #ccc !important;
+    padding-bottom: 8pt;
+    margin-bottom: 8pt;
+  }
+
+  .term-word {
+    font-size: 13pt;
+    font-weight: bold;
+  }
+
+  .term-cross-link {
+    font-size: 8pt;
+    color: #555 !important;
+    margin-bottom: 4pt;
+  }
+
+  /* Sidebar brand: print as header */
+  .sidebar-brand {
+    display: block !important;
+    text-align: center;
+    font-size: 14pt;
+    font-weight: bold;
+    border-bottom: 1pt solid #333;
+    padding-bottom: 6pt;
+    margin-bottom: 12pt;
+  }
+
+  /* Page breaks */
+  h1, h2 { page-break-before: auto; }
+  .page-header { page-break-before: avoid; }
+
+  hr.divider, hr.full-divider {
+    border: none !important;
+    border-top: 0.5pt solid #ccc !important;
+    margin: 12pt 0 !important;
+  }
+
+  /* Sidebar brand visible in print as document title */
+  .sidebar { display: none !important; }
+  .site-wrap::before {
+    content: "Seeing & Believing — Thinking Carefully About Christian Faith";
+    display: block;
+    font-size: 8pt;
+    color: #888 !important;
+    text-align: right;
+    border-bottom: 0.5pt solid #ccc;
+    padding-bottom: 4pt;
+    margin-bottom: 12pt;
+    letter-spacing: 0.06em;
+  }
+}
