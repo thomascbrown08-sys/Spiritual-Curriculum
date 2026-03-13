@@ -8,6 +8,16 @@
 </head>
 <body>
 <div class="site-wrap">
+<!-- Mobile Nav Bar -->
+<div class="mobile-nav-bar">
+  <button class="hamburger" id="hamburger" aria-label="Open navigation">
+    <span></span><span></span><span></span>
+  </button>
+  <span class="brand">Seeing &amp; Believing</span>
+  <div style="width:30px"></div>
+</div>
+<div class="nav-overlay" id="navOverlay"></div>
+
 
 <!-- Sidebar -->
 <nav class="sidebar">
@@ -88,12 +98,8 @@
 
   <h2>A Note on Tone</h2>
   <p>This curriculum assumes good faith — that everyone engaging with it is genuinely seeking, whether from inside faith or outside it. Disagreement is welcome. Certainty is not required. The goal is honest engagement with the material, not performance of belief.</p>
-  <p>It is also written for real people in real conditions — including people who have been disappointed by the church, people in seasons of spiritual dryness, and people who have prayed many times and wonder whether it has counted. That material is not hidden. It is here, throughout, marked with the <strong>🕊️ Wounded Pilgrim</strong> marker, because the curriculum that cannot speak to those people is not telling the whole truth.</p>
-
-  <div style="margin-top: 2rem; padding: 1.25rem 1.5rem; border-top: 1px solid var(--border); font-family: var(--font-body); font-size: 0.95rem; color: var(--text-muted);">
-    <p style="margin:0 0 0.6rem 0;">This curriculum began as one person's attempt to think carefully about faith, doubt, and the evidence for Christian belief. The tools used in its preparation include standard theological reference works, academic scholarship, and AI assistance (Claude, developed by Anthropic) for research and drafting. Every section has been reviewed by the author and is intended to be reviewed by theologically mature readers before broader use. AI assistance introduces the possibility of errors — in theological nuance, source attribution, or pastoral judgment — that careful human review is designed to catch.</p>
-    <p style="margin:0;">Questions, comments, and corrections are genuinely welcome — this curriculum is a living document and honest engagement with it makes it better. If you find something that needs fixing, your response is not just welcome but needed. Please write to <a href="mailto:ThomasCBrown08@gmail.com" style="color: var(--accent);">ThomasCBrown08@gmail.com</a>.</p>
-  </div>
+  <p>It is written for real people in real conditions — including people who have been disappointed by the church, people in seasons of spiritual dryness, and people who have prayed many times and wonder whether it has counted. That material is not hidden. It is present throughout every module, marked with the <strong>🕊️ Wounded Pilgrim</strong> marker. There is also a <a href="pilgrim.html">dedicated page</a> for those who need it most — not a module, but a place set apart.</p>
+  <p style="font-size:0.93rem; color:var(--ink-muted);">For more about this curriculum's origins, methods, and the personal circumstances behind it, see the <a href="about.html">About page</a>. Questions and corrections are always welcome there.</p>
 
   <div class="module-nav">
     <span></span>
@@ -115,5 +121,52 @@
 </div>
 
 <script src="script.js"></script>
+<script>
+/* ── Mobile Nav ──────────────────────────────────────────── */
+(function() {
+  var ham = document.getElementById('hamburger');
+  var sidebar = document.querySelector('.sidebar');
+  var overlay = document.getElementById('navOverlay');
+  var panel = document.querySelector('.toggle-panel');
+
+  if (ham && sidebar && overlay) {
+    function openNav() {
+      sidebar.classList.add('open');
+      overlay.classList.add('open');
+      ham.classList.add('open');
+    }
+    function closeNav() {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('open');
+      ham.classList.remove('open');
+    }
+    ham.addEventListener('click', function() {
+      sidebar.classList.contains('open') ? closeNav() : openNav();
+    });
+    overlay.addEventListener('click', closeNav);
+  }
+
+  if (panel) {
+    // Add icon for collapsed state
+    var icon = document.createElement('div');
+    icon.className = 'toggle-panel-icon';
+    icon.textContent = '⚙️';
+    panel.insertBefore(icon, panel.firstChild);
+
+    panel.addEventListener('click', function(e) {
+      // Only toggle when clicking the icon (collapsed state)
+      if (!panel.classList.contains('panel-open')) {
+        panel.classList.add('panel-open');
+        e.stopPropagation();
+      }
+    });
+    document.addEventListener('click', function(e) {
+      if (panel.classList.contains('panel-open') && !panel.contains(e.target)) {
+        panel.classList.remove('panel-open');
+      }
+    });
+  }
+})();
+</script>
 </body>
 </html>

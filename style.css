@@ -568,14 +568,144 @@ em { font-style: italic; }
 .hide-pilgrim     .toggle-pilgrim     { display: none !important; }
 .hide-plain       .toggle-plain       { display: none !important; }
 
+/* ── Mobile Nav ───────────────────────────────────────────── */
+
+/* Hamburger button — hidden on desktop */
+.mobile-nav-bar {
+  display: none;
+}
+
+/* Overlay behind open drawer */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 199;
+}
+.nav-overlay.open { display: block; }
+
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 900px) {
+  /* Layout */
   .site-wrap { grid-template-columns: 1fr; }
-  .sidebar { display: none; }
-  .main { padding: 2rem 1.5rem; max-width: 100%; }
-  .toggle-panel { right: 0.75rem; top: 0.75rem; min-width: 210px; padding: 1rem 1.2rem; }
+  .main { padding: 2rem 1.25rem; max-width: 100%; }
+
+  /* Sidebar becomes a slide-in drawer */
+  .sidebar {
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    width: 270px;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    z-index: 200;
+    height: 100vh;
+    border-radius: 0;
+    padding-top: 3.5rem;
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  /* Mobile top bar */
+  .mobile-nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background: var(--navy);
+    color: white;
+    padding: 0.75rem 1rem;
+    z-index: 150;
+    gap: 0.75rem;
+  }
+  .mobile-nav-bar .brand {
+    font-family: 'Cormorant SC', serif;
+    font-size: 0.85rem;
+    color: var(--gold-light);
+    letter-spacing: 0.08em;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-shrink: 0;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 2px;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Toggle panel collapses to icon button on mobile */
+  .toggle-panel {
+    right: 0.5rem;
+    top: 0.5rem; /* still fixed, but below mobile bar effectively */
+    min-width: unset;
+    padding: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .toggle-panel-title { display: none; }
+  .toggle-item { display: none; }
+  .toggle-panel.panel-open {
+    border-radius: 10px;
+    width: auto;
+    height: auto;
+    padding: 1rem 1.2rem;
+    right: 0.5rem;
+    top: 3.5rem; /* below mobile nav bar */
+  }
+  .toggle-panel.panel-open .toggle-panel-title { display: block; }
+  .toggle-panel.panel-open .toggle-item { display: flex; }
+  .toggle-panel-icon {
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+  /* Hide icon when expanded */
+  .toggle-panel.panel-open .toggle-panel-icon { display: none; }
+
+  /* Content sizing */
+  h1 { font-size: 1.85rem; }
+  h2 { font-size: 1.45rem; }
+  .hero { padding: 2rem 1.5rem; }
   .module-grid { grid-template-columns: 1fr; }
-  h1 { font-size: 2rem; }
+  .module-nav { flex-wrap: wrap; gap: 0.5rem; }
+  .module-nav .nav-center { order: -1; width: 100%; text-align: center; }
+  .hero-verse { padding: 1rem 1.25rem; font-size: 1rem; }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  .main { padding: 1.5rem 1rem; }
+  .hero { padding: 1.5rem 1rem; border-radius: 6px; }
+  h1 { font-size: 1.6rem; }
+  .box { padding: 1rem 1.1rem; }
+  .toggle-panel { right: 0.25rem; }
+  .principle-row { grid-template-columns: 1fr !important; }
+  .pillar-verse { padding: 1rem; font-size: 0.97rem; }
+  .healing-card { padding: 1.1rem 1.25rem; }
+  .secret-obedience-block { padding: 1.25rem 1.25rem; }
 }
 
 /* ── Utility ──────────────────────────────────────────────── */

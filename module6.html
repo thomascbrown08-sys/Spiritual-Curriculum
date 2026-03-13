@@ -8,6 +8,16 @@
 </head>
 <body>
 <div class="site-wrap">
+<!-- Mobile Nav Bar -->
+<div class="mobile-nav-bar">
+  <button class="hamburger" id="hamburger" aria-label="Open navigation">
+    <span></span><span></span><span></span>
+  </button>
+  <span class="brand">Seeing &amp; Believing</span>
+  <div style="width:30px"></div>
+</div>
+<div class="nav-overlay" id="navOverlay"></div>
+
 <nav class="sidebar">
   <div class="sidebar-brand">Seeing &amp; Believing<span>Thinking Carefully About Christian Faith</span></div>
   <a href="index.html">Home</a>
@@ -81,7 +91,7 @@
     <p>"I am the man who has seen affliction under the rod of his wrath; he has driven me and brought me into darkness without any light; surely against me he turns his hand again and again, all day long... But this I call to mind, and therefore I have hope: The steadfast love of the LORD never ceases; his mercies never come to an end; they are new every morning."</p>
   </div>
 
-  <p>Lamentations 3 does turn toward hope — but notice when it turns, and from where. The prophet has been in devastation long enough to say "he has driven me into darkness without any light." The hope in verses 21–23 is not cheap. It is the hope of someone who has been all the way down into the darkness and found that the steadfast love of God — the <em>hesed</em> — outlasts even that. The turn is not a denial of the darkness. It is what has been found at the bottom of it.</p>
+  <p>Lamentations 3 does turn toward hope — but notice when it turns, and from where. The prophet has been in devastation long enough to say "he has driven me into darkness without any light." The hope in verses 21–23 is not cheap. It is the hope of someone who has been all the way down into the darkness and found that the steadfast love of God — the <a href="glossary.html#hesed"><em>hesed</em></a> — outlasts even that. The turn is not a denial of the darkness. It is what has been found at the bottom of it.</p>
 
   <div class="box box-plain toggle-plain">
     <div class="box-title">📖 IN PLAIN TERMS</div>
@@ -226,5 +236,52 @@
   <label class="toggle-item"><input type="checkbox" id="toggle-plain" checked><span class="toggle-dot" style="background:var(--plain-bdr)"></span>📖 Plain Language</label>
 </div>
 <script src="script.js"></script>
+<script>
+/* ── Mobile Nav ──────────────────────────────────────────── */
+(function() {
+  var ham = document.getElementById('hamburger');
+  var sidebar = document.querySelector('.sidebar');
+  var overlay = document.getElementById('navOverlay');
+  var panel = document.querySelector('.toggle-panel');
+
+  if (ham && sidebar && overlay) {
+    function openNav() {
+      sidebar.classList.add('open');
+      overlay.classList.add('open');
+      ham.classList.add('open');
+    }
+    function closeNav() {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('open');
+      ham.classList.remove('open');
+    }
+    ham.addEventListener('click', function() {
+      sidebar.classList.contains('open') ? closeNav() : openNav();
+    });
+    overlay.addEventListener('click', closeNav);
+  }
+
+  if (panel) {
+    // Add icon for collapsed state
+    var icon = document.createElement('div');
+    icon.className = 'toggle-panel-icon';
+    icon.textContent = '⚙️';
+    panel.insertBefore(icon, panel.firstChild);
+
+    panel.addEventListener('click', function(e) {
+      // Only toggle when clicking the icon (collapsed state)
+      if (!panel.classList.contains('panel-open')) {
+        panel.classList.add('panel-open');
+        e.stopPropagation();
+      }
+    });
+    document.addEventListener('click', function(e) {
+      if (panel.classList.contains('panel-open') && !panel.contains(e.target)) {
+        panel.classList.remove('panel-open');
+      }
+    });
+  }
+})();
+</script>
 </body>
 </html>

@@ -227,6 +227,16 @@
 </head>
 <body>
 <div class="site-wrap">
+<!-- Mobile Nav Bar -->
+<div class="mobile-nav-bar">
+  <button class="hamburger" id="hamburger" aria-label="Open navigation">
+    <span></span><span></span><span></span>
+  </button>
+  <span class="brand">Seeing &amp; Believing</span>
+  <div style="width:30px"></div>
+</div>
+<div class="nav-overlay" id="navOverlay"></div>
+
 
 <!-- Sidebar -->
 <nav class="sidebar">
@@ -422,7 +432,7 @@
   <!-- 6 -->
   <a class="section-anchor" id="church-wound"></a>
   <div class="pilgrim-section">
-    <h2>When the Church Was the Wound</h2>
+    <h2 id="church-wound">When the Church Was the Wound</h2>
 
     <p>This section exists because it needs to. The curriculum throughout acknowledges it, in the Wounded Pilgrim notes that appear in every module. But it deserves to be said plainly here, in one place.</p>
 
@@ -450,7 +460,7 @@
   <!-- 7 -->
   <a class="section-anchor" id="door-still-open"></a>
   <div class="pilgrim-section">
-    <h2>The Door Is Still Open</h2>
+    <h2 id="door-still-open">The Door Is Still Open</h2>
 
     <p>Everything in this curriculum eventually leads here — but it leads here slowly, carefully, and without coercion. The goal of the curriculum is not to push you through a door but to let you see that the door exists, that it is genuinely open, and that the one who stands behind it is not what the worst of the church's representations suggested.</p>
 
@@ -505,7 +515,7 @@
 
   <div class="panel-note">
     <strong>⚖️ A Note on Theological Sources</strong><br>
-    This page draws on Scripture (Isaiah 42, Psalm 22, Psalm 88, Matthew 6, Matthew 11, Matthew 18, Luke 24, John 7, Romans 8, Hebrews 10, Revelation 3), on the body of Tim Keller's pastoral work — particularly <em>Walking With God Through Pain and Suffering</em> and <em>The Prodigal God</em> — and on the broader curriculum's theological foundations described in <a href="spine.html">The Spine</a>. As with all pages in this curriculum, this page should be reviewed by theologically mature readers before broader use. The pastoral claims made here are serious and the author does not take them lightly.
+    This page draws on Scripture (Isaiah 42, Psalm 22, Psalm 88, Matthew 6, Matthew 11, Matthew 18, Luke 24, John 7, Romans 8, Hebrews 10, Revelation 3), on the body of Tim Keller's pastoral work — particularly <em>Walking With God Through Pain and Suffering</em> and <em>The Prodigal God</em> — and on the broader curriculum's theological foundations described in <a href="spine.html">The Spine</a>. Full bibliographic details for the Keller works and related reading are in the <a href="resources.html">Resources page</a>. As with all pages in this curriculum, this page should be reviewed by theologically mature readers before broader use. The pastoral claims made here are serious and the author does not take them lightly.
   </div>
 
   <div class="module-nav">
@@ -528,5 +538,52 @@
 </div>
 
 <script src="script.js"></script>
+<script>
+/* ── Mobile Nav ──────────────────────────────────────────── */
+(function() {
+  var ham = document.getElementById('hamburger');
+  var sidebar = document.querySelector('.sidebar');
+  var overlay = document.getElementById('navOverlay');
+  var panel = document.querySelector('.toggle-panel');
+
+  if (ham && sidebar && overlay) {
+    function openNav() {
+      sidebar.classList.add('open');
+      overlay.classList.add('open');
+      ham.classList.add('open');
+    }
+    function closeNav() {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('open');
+      ham.classList.remove('open');
+    }
+    ham.addEventListener('click', function() {
+      sidebar.classList.contains('open') ? closeNav() : openNav();
+    });
+    overlay.addEventListener('click', closeNav);
+  }
+
+  if (panel) {
+    // Add icon for collapsed state
+    var icon = document.createElement('div');
+    icon.className = 'toggle-panel-icon';
+    icon.textContent = '⚙️';
+    panel.insertBefore(icon, panel.firstChild);
+
+    panel.addEventListener('click', function(e) {
+      // Only toggle when clicking the icon (collapsed state)
+      if (!panel.classList.contains('panel-open')) {
+        panel.classList.add('panel-open');
+        e.stopPropagation();
+      }
+    });
+    document.addEventListener('click', function(e) {
+      if (panel.classList.contains('panel-open') && !panel.contains(e.target)) {
+        panel.classList.remove('panel-open');
+      }
+    });
+  }
+})();
+</script>
 </body>
 </html>

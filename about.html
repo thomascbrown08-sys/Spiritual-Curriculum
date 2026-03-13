@@ -194,6 +194,16 @@
 </head>
 <body>
 <div class="site-wrap">
+<!-- Mobile Nav Bar -->
+<div class="mobile-nav-bar">
+  <button class="hamburger" id="hamburger" aria-label="Open navigation">
+    <span></span><span></span><span></span>
+  </button>
+  <span class="brand">Seeing &amp; Believing</span>
+  <div style="width:30px"></div>
+</div>
+<div class="nav-overlay" id="navOverlay"></div>
+
 
 <!-- Sidebar -->
 <nav class="sidebar">
@@ -257,7 +267,7 @@
   <p>The curriculum draws throughout on the work of Timothy Keller — particularly his approach to finding third ways between polarized theological positions, and the tone of pastoral honesty he modeled in works like <em>Walking With God Through Pain and Suffering</em> and <em>The Prodigal God.</em> It draws on Reformed, Catholic, and Anabaptist traditions, on academic biblical scholarship, and on the broader history of Christian spiritual formation. Sources are noted throughout; errors in attribution or theological nuance are the author's responsibility, not the tradition's.</p>
 
   <div class="review-note">
-    <strong>⚖️ A note on review:</strong> This curriculum is a living document. It has not been formally reviewed by a theological panel, though that review is intended. If you find something that needs correcting — in theology, in pastoral judgment, or in tone — your response is not just welcome but needed. Please write to <a href="mailto:ThomasCBrown08@gmail.com">ThomasCBrown08@gmail.com</a>.
+    <strong>⚖️ A note on review:</strong> This curriculum is a living document. It has not been formally reviewed by a theological panel, though that review is intended. If you find something that needs correcting — in theology, in pastoral judgment, or in tone — please use the contact address in the Author section below.
   </div>
 
   <div class="review-note" style="border-left-color: var(--ink-muted); background: var(--cream-dark);">
@@ -312,17 +322,6 @@
 </main>
 </div>
 
-<!-- Toggle Panel -->
-<div class="toggle-panel">
-  <div class="toggle-panel-title">Show / Hide</div>
-  <label class="toggle-item"><input type="checkbox" id="toggle-facilitator" checked><span class="toggle-dot" style="background:var(--facilitator-bdr)"></span>🧭 Facilitator</label>
-  <label class="toggle-item"><input type="checkbox" id="toggle-deepdive" checked><span class="toggle-dot" style="background:var(--deepdive-bdr)"></span>📚 Deep Dives</label>
-  <label class="toggle-item"><input type="checkbox" id="toggle-cultural" checked><span class="toggle-dot" style="background:var(--cultural-bdr)"></span>🌍 Cultural</label>
-  <label class="toggle-item"><input type="checkbox" id="toggle-nuance" checked><span class="toggle-dot" style="background:var(--nuance-bdr)"></span>⚖️ Nuance</label>
-  <label class="toggle-item"><input type="checkbox" id="toggle-pilgrim" checked><span class="toggle-dot" style="background:var(--pilgrim-bdr)"></span>🕊️ Pilgrim</label>
-  <label class="toggle-item"><input type="checkbox" id="toggle-plain" checked><span class="toggle-dot" style="background:var(--plain-bdr)"></span>📖 Plain Language</label>
-</div>
-
 <script src="script.js"></script>
 <script>
 function toggleStory() {
@@ -342,6 +341,53 @@ function toggleStory() {
     story.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 }
+</script>
+<script>
+/* ── Mobile Nav ──────────────────────────────────────────── */
+(function() {
+  var ham = document.getElementById('hamburger');
+  var sidebar = document.querySelector('.sidebar');
+  var overlay = document.getElementById('navOverlay');
+  var panel = document.querySelector('.toggle-panel');
+
+  if (ham && sidebar && overlay) {
+    function openNav() {
+      sidebar.classList.add('open');
+      overlay.classList.add('open');
+      ham.classList.add('open');
+    }
+    function closeNav() {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('open');
+      ham.classList.remove('open');
+    }
+    ham.addEventListener('click', function() {
+      sidebar.classList.contains('open') ? closeNav() : openNav();
+    });
+    overlay.addEventListener('click', closeNav);
+  }
+
+  if (panel) {
+    // Add icon for collapsed state
+    var icon = document.createElement('div');
+    icon.className = 'toggle-panel-icon';
+    icon.textContent = '⚙️';
+    panel.insertBefore(icon, panel.firstChild);
+
+    panel.addEventListener('click', function(e) {
+      // Only toggle when clicking the icon (collapsed state)
+      if (!panel.classList.contains('panel-open')) {
+        panel.classList.add('panel-open');
+        e.stopPropagation();
+      }
+    });
+    document.addEventListener('click', function(e) {
+      if (panel.classList.contains('panel-open') && !panel.contains(e.target)) {
+        panel.classList.remove('panel-open');
+      }
+    });
+  }
+})();
 </script>
 </body>
 </html>

@@ -1,6 +1,28 @@
 #!/bin/bash
+# ─────────────────────────────────────────────────────────────
+# DEPRECATED — DO NOT RUN
+# ─────────────────────────────────────────────────────────────
+#
+# This script was used in an early stage of development to
+# scaffold module7.html from a template. It now references a
+# stale sidebar structure (missing About, Responding, Wounded
+# Pilgrim links), lacks mobile nav HTML, and would overwrite
+# the current module7.html with an outdated version if run.
+#
+# As of v18, all module files are maintained directly.
+# If a new module is needed, copy an existing module file
+# and edit it in place — do not regenerate from here.
+#
+# Kept in the repository for version history only.
+# ─────────────────────────────────────────────────────────────
+echo "This script is deprecated. See comments inside for details."
+exit 1
 
-# Module 7
+# ── ORIGINAL SCRIPT (preserved below, do not execute) ──────
+
+exit 0  # hard stop
+
+# Module 7 (stale)
 cat << 'EOF' > /home/claude/curriculum/module7.html
 <!DOCTYPE html>
 <html lang="en">
