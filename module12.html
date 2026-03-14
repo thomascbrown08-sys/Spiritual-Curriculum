@@ -315,9 +315,60 @@
 
 </main>
 </div>
+<div class="toggle-panel">
+  <div class="toggle-panel-title">Show / Hide</div>
+  <label class="toggle-item"><input type="checkbox" id="toggle-facilitator" checked><span class="toggle-dot" style="background:var(--facilitator-bdr)"></span>🧭 Facilitator</label>
+  <label class="toggle-item"><input type="checkbox" id="toggle-deepdive" checked><span class="toggle-dot" style="background:var(--deepdive-bdr)"></span>📚 Deep Dives</label>
+  <label class="toggle-item"><input type="checkbox" id="toggle-cultural" checked><span class="toggle-dot" style="background:var(--cultural-bdr)"></span>🌍 Cultural</label>
+  <label class="toggle-item"><input type="checkbox" id="toggle-nuance" checked><span class="toggle-dot" style="background:var(--nuance-bdr)"></span>⚖️ Nuance</label>
+  <label class="toggle-item"><input type="checkbox" id="toggle-pilgrim" checked><span class="toggle-dot" style="background:var(--pilgrim-bdr)"></span>🕊️ Pilgrim</label>
+  <label class="toggle-item"><input type="checkbox" id="toggle-plain" checked><span class="toggle-dot" style="background:var(--plain-bdr)"></span>📖 Plain Language</label>
+</div>
+<script src="script.js"></script>
 <script>
-var hamburger=document.getElementById('hamburger');var overlay=document.getElementById('navOverlay');var sidebar=document.querySelector('.sidebar');
-hamburger.addEventListener('click',function(){sidebar.classList.toggle('open');overlay.classList.toggle('active');});
-overlay.addEventListener('click',function(){sidebar.classList.remove('open');overlay.classList.remove('active');});
+/* ── Mobile Nav ──────────────────────────────────────────── */
+(function() {
+  var ham = document.getElementById('hamburger');
+  var sidebar = document.querySelector('.sidebar');
+  var overlay = document.getElementById('navOverlay');
+  var panel = document.querySelector('.toggle-panel');
+
+  if (ham && sidebar && overlay) {
+    function openNav() {
+      sidebar.classList.add('open');
+      overlay.classList.add('open');
+      ham.classList.add('open');
+    }
+    function closeNav() {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('open');
+      ham.classList.remove('open');
+    }
+    ham.addEventListener('click', function() {
+      sidebar.classList.contains('open') ? closeNav() : openNav();
+    });
+    overlay.addEventListener('click', closeNav);
+  }
+
+  if (panel) {
+    var icon = document.createElement('div');
+    icon.className = 'toggle-panel-icon';
+    icon.textContent = '⚙️';
+    panel.insertBefore(icon, panel.firstChild);
+
+    panel.addEventListener('click', function(e) {
+      if (!panel.classList.contains('panel-open')) {
+        panel.classList.add('panel-open');
+        e.stopPropagation();
+      }
+    });
+    document.addEventListener('click', function(e) {
+      if (panel.classList.contains('panel-open') && !panel.contains(e.target)) {
+        panel.classList.remove('panel-open');
+      }
+    });
+  }
+})();
 </script>
-</body></html>
+</body>
+</html>
