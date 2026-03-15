@@ -55,6 +55,158 @@
 
   <hr class="divider">
 
+  <h2>Site Map</h2>
+  <p style="font-size:0.93rem; color:var(--ink-muted); margin-bottom:1.25rem;">Every page in this curriculum and how it relates to the whole. Click any item to go there.</p>
+
+  <div class="sitemap-widget">
+    <style>
+      .sitemap-widget { font-family: 'Crimson Pro', Georgia, serif; margin-bottom: 2rem; }
+      .sm-section-lbl { font-family: 'Cormorant SC', serif; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 0.6rem; display: block; }
+      .sm-nav-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 6px; }
+      .sm-nav-item { background: var(--parchment); border: 1px solid var(--cream-dark); border-radius: 8px; padding: 8px 6px; text-align: center; font-size: 0.83rem; color: var(--ink); text-decoration: none; transition: background 0.15s; display: block; }
+      .sm-nav-item:hover { background: var(--cream-dark); }
+      .sm-pilgrim-item { border-left: 3px solid var(--teal); }
+      .sm-divider { display: flex; align-items: center; gap: 8px; margin: 1.1rem 0 0.8rem; color: var(--ink-muted); font-size: 0.78rem; font-family: 'Cormorant SC', serif; letter-spacing: 0.08em; }
+      .sm-divider::before, .sm-divider::after { content: ''; flex: 1; height: 1px; background: var(--cream-dark); }
+      .sm-phases { display: flex; flex-direction: column; gap: 7px; }
+      .sm-phase-row { display: flex; gap: 7px; align-items: stretch; }
+      .sm-tag { width: 80px; flex-shrink: 0; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 6px 4px; border: 1px solid var(--cream-dark); border-left: 3px solid; background: var(--parchment); gap: 3px; }
+      .sm-tag-phase { font-size: 0.75rem; font-weight: 600; text-align: center; line-height: 1.2; font-family: 'Cormorant SC', serif; letter-spacing: 0.04em; }
+      .sm-tag-desc { font-size: 0.7rem; color: var(--ink-soft); text-align: center; line-height: 1.3; }
+      .sm-mods { display: flex; gap: 6px; flex: 1; }
+      .sm-mod { flex: 1; min-width: 0; background: var(--parchment); border: 1px solid var(--cream-dark); border-top: 3px solid; border-radius: 8px; padding: 8px; text-decoration: none; display: block; transition: background 0.15s; }
+      .sm-mod:hover { background: var(--cream-dark); }
+      .sm-mod-num { font-size: 0.7rem; color: var(--ink-muted); margin-bottom: 3px; font-family: 'Cormorant SC', serif; letter-spacing: 0.06em; }
+      .sm-mod-title { font-size: 0.82rem; color: var(--ink); line-height: 1.35; }
+      .sm-submods { margin-top: 4px; margin-left: 87px; display: flex; flex-direction: column; gap: 4px; }
+      .sm-sub-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
+      .sm-sub-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+      .sm-sub { background: var(--cream-dark); border: 1px solid var(--cream-dark); border-radius: 6px; padding: 5px 7px; font-size: 0.76rem; color: var(--ink-soft); text-decoration: none; display: block; transition: background 0.15s; line-height: 1.35; }
+      .sm-sub:hover { background: var(--parchment); color: var(--ink); }
+      .sm-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--cream-dark); }
+      .sm-leg-item { display: flex; align-items: center; gap: 5px; font-size: 0.75rem; color: var(--ink-soft); }
+      .sm-leg-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+      .phase1 { --pc: #1D9E75; } .phase1 .sm-tag { border-left-color: #1D9E75; } .phase1 .sm-tag-phase { color: #1D9E75; } .phase1 .sm-mod { border-top-color: #1D9E75; }
+      .phase2 { --pc: #534AB7; } .phase2 .sm-tag { border-left-color: #534AB7; } .phase2 .sm-tag-phase { color: #534AB7; } .phase2 .sm-mod { border-top-color: #534AB7; }
+      .phase3 { --pc: #993C1D; } .phase3 .sm-tag { border-left-color: #993C1D; } .phase3 .sm-tag-phase { color: #993C1D; } .phase3 .sm-mod { border-top-color: #993C1D; }
+      .phase4 { --pc: #BA7517; } .phase4 .sm-tag { border-left-color: #BA7517; } .phase4 .sm-tag-phase { color: #BA7517; } .phase4 .sm-mod { border-top-color: #BA7517; }
+      .phase5 { --pc: #185FA5; } .phase5 .sm-tag { border-left-color: #185FA5; } .phase5 .sm-tag-phase { color: #185FA5; } .phase5 .sm-mod { border-top-color: #185FA5; }
+      .phase6 { --pc: #3B6D11; } .phase6 .sm-tag { border-left-color: #3B6D11; } .phase6 .sm-tag-phase { color: #3B6D11; } .phase6 .sm-mod { border-top-color: #3B6D11; }
+      @media (max-width: 600px) {
+        .sm-nav-grid { grid-template-columns: repeat(2, 1fr); }
+        .sm-phase-row { flex-direction: column; }
+        .sm-tag { width: 100%; flex-direction: row; justify-content: flex-start; gap: 8px; padding: 6px 10px; }
+        .sm-mods { flex-wrap: wrap; }
+        .sm-mod { min-width: calc(50% - 3px); }
+        .sm-submods { margin-left: 0; }
+        .sm-sub-row { grid-template-columns: repeat(2, 1fr); }
+      }
+    </style>
+
+    <span class="sm-section-lbl">Site pages — accessible from every page</span>
+    <div class="sm-nav-grid">
+      <a href="index.html"    class="sm-nav-item">Home</a>
+      <a href="about.html"    class="sm-nav-item">About</a>
+      <a href="spine.html"    class="sm-nav-item">The Spine</a>
+      <a href="map.html"      class="sm-nav-item">Curriculum Map</a>
+    </div>
+    <div class="sm-nav-grid">
+      <a href="responding.html" class="sm-nav-item">Responding</a>
+      <a href="glossary.html"   class="sm-nav-item">Glossary</a>
+      <a href="resources.html"  class="sm-nav-item">Resources</a>
+      <a href="pilgrim.html"    class="sm-nav-item sm-pilgrim-item">🕊️ Wounded Pilgrim</a>
+    </div>
+
+    <div class="sm-divider">curriculum journey</div>
+    <span class="sm-section-lbl">Twelve modules — read in sequence or select individually</span>
+
+    <div class="sm-phases">
+
+      <div class="sm-phase-row phase1">
+        <div class="sm-tag"><span class="sm-tag-phase">Phase 1</span><span class="sm-tag-desc">Need &amp; story</span></div>
+        <div class="sm-mods">
+          <a href="module1.html" class="sm-mod"><div class="sm-mod-num">Module 1</div><div class="sm-mod-title">The Honest Mirror</div></a>
+          <a href="module2.html" class="sm-mod"><div class="sm-mod-num">Module 2</div><div class="sm-mod-title">The Compelling Story</div></a>
+        </div>
+      </div>
+
+      <div class="sm-phase-row phase2">
+        <div class="sm-tag"><span class="sm-tag-phase">Phase 2</span><span class="sm-tag-desc">Evidence</span></div>
+        <div class="sm-mods">
+          <a href="module3.html" class="sm-mod"><div class="sm-mod-num">Module 3</div><div class="sm-mod-title">The Examined Record</div></a>
+          <a href="module4.html" class="sm-mod"><div class="sm-mod-num">Module 4</div><div class="sm-mod-title">The Resurrection</div></a>
+          <a href="module5.html" class="sm-mod"><div class="sm-mod-num">Module 5</div><div class="sm-mod-title">The Unvarnished Record</div></a>
+        </div>
+      </div>
+
+      <div class="sm-phase-row phase3">
+        <div class="sm-tag"><span class="sm-tag-phase">Phase 3</span><span class="sm-tag-desc">Suffering</span></div>
+        <div class="sm-mods">
+          <a href="module6.html" class="sm-mod" style="max-width:240px"><div class="sm-mod-num">Module 6</div><div class="sm-mod-title">The Problem of Suffering</div></a>
+        </div>
+      </div>
+
+      <div class="sm-phase-row phase4">
+        <div class="sm-tag"><span class="sm-tag-phase">Phase 4</span><span class="sm-tag-desc">Applied life</span></div>
+        <div class="sm-mods">
+          <a href="module7.html" class="sm-mod"><div class="sm-mod-num">Module 7</div><div class="sm-mod-title">Signposts of Growth</div></a>
+          <a href="module8.html" class="sm-mod"><div class="sm-mod-num">Module 8</div><div class="sm-mod-title">Obedience as the Door</div></a>
+          <a href="module9.html" class="sm-mod"><div class="sm-mod-num">Module 9</div><div class="sm-mod-title">Living It Out</div></a>
+        </div>
+      </div>
+
+      <div class="sm-phase-row phase5">
+        <div class="sm-tag"><span class="sm-tag-phase">Phase 5</span><span class="sm-tag-desc">Community</span></div>
+        <div class="sm-mods">
+          <a href="module10.html" class="sm-mod" style="max-width:240px"><div class="sm-mod-num">Module 10</div><div class="sm-mod-title">Divided We Fall</div></a>
+        </div>
+      </div>
+      <div class="sm-submods">
+        <div class="sm-sub-row">
+          <a href="module10-1.html" class="sm-sub">T1 · Escalation Trap</a>
+          <a href="module10-2.html" class="sm-sub">T2 · Vocabulary Trap</a>
+          <a href="module10-3.html" class="sm-sub">T3 · Wounded Proxy War</a>
+        </div>
+        <div class="sm-sub-row">
+          <a href="module10-4.html" class="sm-sub">T4 · Uniformity Substitution</a>
+          <a href="module10-5.html" class="sm-sub">T5 · Certainty Weapon</a>
+          <a href="module10-6.html" class="sm-sub">T6 · Tradition Trap</a>
+        </div>
+        <div class="sm-sub-row">
+          <a href="module10-7.html" class="sm-sub">T7 · Social Hostage</a>
+          <a href="module10-8.html" class="sm-sub">T8 · Celebrity Fracture</a>
+          <a href="module10-9.html" class="sm-sub">T9 · Purity Spiral</a>
+        </div>
+      </div>
+
+      <div class="sm-phase-row phase6" style="margin-top:3px">
+        <div class="sm-tag"><span class="sm-tag-phase">Phase 6</span><span class="sm-tag-desc">Doctrine</span></div>
+        <div class="sm-mods">
+          <a href="module11.html" class="sm-mod"><div class="sm-mod-num">Module 11</div><div class="sm-mod-title">Old Errors, New Labels</div></a>
+          <a href="module12.html" class="sm-mod"><div class="sm-mod-num">Module 12</div><div class="sm-mod-title">We Believe</div></a>
+        </div>
+      </div>
+      <div class="sm-submods">
+        <div class="sm-sub-row-2">
+          <a href="module12-chalcedon.html"  class="sm-sub">Extended reading: Chalcedonian Definition</a>
+          <a href="module12-athanasian.html" class="sm-sub">Extended reading: Athanasian Creed</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="sm-legend">
+      <div class="sm-leg-item"><div class="sm-leg-dot" style="background:#1D9E75"></div>Phase 1 — Need &amp; Story</div>
+      <div class="sm-leg-item"><div class="sm-leg-dot" style="background:#534AB7"></div>Phase 2 — Evidence</div>
+      <div class="sm-leg-item"><div class="sm-leg-dot" style="background:#993C1D"></div>Phase 3 — Suffering</div>
+      <div class="sm-leg-item"><div class="sm-leg-dot" style="background:#BA7517"></div>Phase 4 — Applied Life</div>
+      <div class="sm-leg-item"><div class="sm-leg-dot" style="background:#185FA5"></div>Phase 5 — Community</div>
+      <div class="sm-leg-item"><div class="sm-leg-dot" style="background:#3B6D11"></div>Phase 6 — Doctrine</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
   <h2>The Modules at a Glance</h2>
 
   <div class="module-grid">
