@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Living Story: A Tour of Church History — Seeing and Believing</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.era-nav {
+  background: var(--cream-dark);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 2.5rem;
+  font-size: 0.88rem;
+  line-height: 2.2;
+}
+.era-nav strong {
+  display: block;
+  font-family: 'Cormorant SC', serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 0.4rem;
+}
+.era-nav a {
+  color: var(--teal);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s;
+  margin-right: 0.4rem;
+}
+.era-nav a:hover { border-bottom-color: var(--teal-light); }
+
+.era-entry {
+  border-left: 3px solid var(--gold);
+  padding-left: 1.5rem;
+  margin: 3rem 0 2rem 0;
+}
+.era-entry h2 {
+  margin-top: 0;
+  color: var(--navy);
+}
+.era-entry .era-dates {
+  font-style: italic;
+  color: var(--ink-muted);
+  font-size: 1.02rem;
+  margin-top: -0.4rem;
+  margin-bottom: 1.2rem;
+  display: block;
+}
+.figure-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 1rem 0;
+}
+.figure-tag {
+  background: var(--cream-dark);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  font-family: 'Cormorant SC', serif;
+  letter-spacing: 0.04em;
+}
+.resource-list {
+  margin: 0.5rem 0 0 0;
+  padding-left: 1.2rem;
+  font-size: 0.93rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+.resource-list li { margin-bottom: 0.2rem; }
+.resource-list a { color: var(--teal); }
+.resource-list .book-ref {
+  color: var(--ink-muted);
+  font-style: italic;
+}
+.draft-notice {
+  background: #fff8e1;
+  border: 1px solid #ffe082;
+  border-radius: 6px;
+  padding: 0.85rem 1.1rem;
+  font-size: 0.9rem;
+  color: #795548;
+  margin-bottom: 2rem;
+}
+</style>
+</head>
+<body>
+<div class="site-wrap">
+<!-- Mobile Nav Bar -->
+<div class="mobile-nav-bar">
+  <button class="hamburger" id="hamburger" aria-label="Open navigation">
+    <span></span><span></span><span></span>
+  </button>
+  <span class="brand">Seeing &amp; Believing</span>
+  <div style="width:30px"></div>
+</div>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<nav class="sidebar">
+  <div class="sidebar-brand">Seeing &amp; Believing<span>Thinking Carefully About Christian Faith</span></div>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="spine.html">The Spine</a>
+  <a href="map.html">Curriculum Map</a>
+  <a href="responding.html">Responding</a>
+  <a href="glossary.html">Glossary</a>
+  <a href="resources.html">Resources</a>
+  <a href="church-history.html" class="active">Church History</a>
+  <a href="pilgrim.html" class="pilgrim-link">🕊️ Wounded Pilgrim</a>
+  <div class="sidebar-section">Modules</div>
+  <a href="module1.html" class="module-link">1 · The Honest Mirror</a>
+  <a href="module2.html" class="module-link">2 · The Compelling Story</a>
+  <a href="module3.html" class="module-link">3 · The Examined Record</a>
+  <a href="module4.html" class="module-link">4 · The Resurrection</a>
+  <a href="module5.html" class="module-link">5 · The Unvarnished Record</a>
+  <a href="module6.html" class="module-link">6 · The Problem of Suffering</a>
+  <a href="module7.html" class="module-link">7 · Signposts of Growth</a>
+  <a href="module8.html" class="module-link">8 · Obedience as the Door</a>
+  <a href="module9.html" class="module-link">9 · Living It Out</a>
+  <a href="module10.html" class="module-link">10 · Divided We Fall</a>
+  <a href="module11.html" class="module-link">11 · Old Errors, New Labels</a>
+  <a href="module12.html" class="module-link">12 · We Believe</a>
+</nav>
+<main class="main">
+
+  <div class="page-header">
+    <div class="page-label">Supplementary Resource</div>
+    <h1>The Living Story</h1>
+    <div class="page-subtitle">A Tour of Church History</div>
+    <div class="sequence-note">The church is not a museum housing relics of a past faith. It is a living community with a living story — one that stretches from a borrowed upper room in Jerusalem to every continent on earth. Knowing that story will not save you. But it will almost certainly make you more grateful, more humble, and more astonished that the thing has survived at all.</div>
+  </div>
+
+  <div class="draft-notice">
+    📝 <strong>Draft.</strong> This page is under review and has not yet been integrated into the main curriculum. Content and links are subject to revision.
+  </div>
+
+  <div class="era-nav">
+    <strong>Navigate This Page</strong>
+    <a href="#apostolic">Apostolic Age</a> &nbsp;·&nbsp;
+    <a href="#fathers">Church Fathers</a> &nbsp;·&nbsp;
+    <a href="#canon">How We Got the Bible</a> &nbsp;·&nbsp;
+    <a href="#medieval">The Middle Ages</a> &nbsp;·&nbsp;
+    <a href="#renaissance">The Renaissance</a> &nbsp;·&nbsp;
+    <a href="#reformation">The Reformation</a> &nbsp;·&nbsp;
+    <a href="#puritan">The Puritan Era</a> &nbsp;·&nbsp;
+    <a href="#america">Puritanism and America</a> &nbsp;·&nbsp;
+    <a href="#awakening">The Great Awakening</a> &nbsp;·&nbsp;
+    <a href="#missions">The Age of Missions</a> &nbsp;·&nbsp;
+    <a href="#modern">The Modern Church</a>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div class="era-entry" id="apostolic">
+    <h2>The Apostolic Age</h2>
+    <span class="era-dates">c. 30–100 AD</span>
+
+    <p>On Good Friday, the disciples scattered. Peter denied knowing Jesus three times before the rooster crowed. By Sunday, something had changed — and within weeks, those same frightened people were standing in the public square of the city where the crucifixion had happened, proclaiming the resurrection to the people who had been there. They did not soften the message to make it safer. They were not running a careful PR campaign. They were reporting what they said they had seen.</p>
+
+    <p>Within thirty years of the resurrection, communities bearing the name of Christ existed in Jerusalem, Antioch, Corinth, Ephesus, Rome, and across the Mediterranean world. The letters that became the New Testament were written into those specific communities, addressing their specific crises — which is why they feel so alive to read. They were not composed as abstract theology. They were pastoral correspondence to real people in real trouble.</p>
+
+    <p>By the end of the first century, most of the apostles were dead — the majority executed for refusing to stop talking. Peter, by tradition, crucified upside down in Rome because he felt unworthy to die the same way as his Lord. Paul beheaded. James stoned. The movement they gave their lives to was, by any reasonable human calculation, too small and too persecuted to survive. It had no buildings, no state patronage, no army, and a founder who had died on a Roman criminal's cross. What it had instead was an unshakeable conviction that the founder was not, in fact, still dead.</p>
+
+    <div class="figure-row">
+      <span class="figure-tag">Paul of Tarsus</span>
+      <span class="figure-tag">Peter</span>
+      <span class="figure-tag">James (brother of Jesus)</span>
+      <span class="figure-tag">John the Apostle</span>
+      <span class="figure-tag">Luke the Evangelist</span>
+    </div>
+
+    <div class="box box-nuance toggle-nuance">
+      <div class="box-title">📚 For Further Study — The Apostolic Age</div>
+      <ul class="resource-list">
+        <li><a href="https://www.ccel.org/ccel/schaff/hcc1.html" target="_blank">Philip Schaff, <em>History of the Christian Church</em>, Vol. 1</a> — The definitive classic, now free online. Thorough and reliable.</li>
+        <li><span class="book-ref">N.T. Wright, <em>The New Testament and the People of God</em> (Fortress, 1992)</span> — Meticulous and rewarding account of the world the early church inhabited.</li>
+        <li><span class="book-ref">Justo González, <em>The Story of Christianity</em>, Vol. 1 (HarperOne, 2010)</span> — The most readable single-volume survey of this period. Start here if you're new to church history.</li>
+        <li><a href="https://www.youtube.com/watch?v=aNPPbFNbSXQ" target="_blank">Michael Reeves, "The Spread of the Early Church" (Union School of Theology)</a> — Accessible and engaging lecture series.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div class="era-entry" id="fathers">
+    <h2>The Church Fathers and the Roman Empire</h2>
+    <span class="era-dates">c. 100–500 AD</span>
+
+    <p>Imagine you are Polycarp, Bishop of Smyrna, standing before the Roman proconsul in roughly 155 AD. You are in your mid-eighties. The arena is full. The crowd is calling for your death. The proconsul offers you a way out: just curse the name of Christ. Polycarp's answer has survived the centuries: <em>"Eighty-six years I have served him, and he has never done me wrong. How can I blaspheme my King who saved me?"</em> He was burned alive. The fire, according to eyewitnesses, curled away from him in an arch before a soldier stepped in with a sword. Whether you take that detail literally or not, the man's composure in the face of it is a historical fact.</p>
+
+    <p>The church fathers were not pale, otherworldly academics. They were pastors, bishops, and thinkers who did their theology in the middle of persecution, heresy, and political pressure — and who, in the process, gave the church the vocabulary it still uses today. Justin Martyr brought Greek philosophy into conversation with the gospel and was executed for it around 165 AD. Tertullian, the brilliant and irascible North African lawyer, gave us the word <em>Trinity</em> itself. Origen — wildly creative, sometimes problematic, endlessly fascinating — wrote more than any other ancient Christian thinker and spent his later years in prison for his faith.</p>
+
+    <p>Then there is Athanasius — the man who would not bend. In the fourth century, the entire Eastern Roman Empire, with imperial backing, went Arian (see <a href="module11.html">Module 11</a>). The emperor pressured Athanasius to compromise. Bishops capitulated one by one. Athanasius was exiled five times. His critics taunted him: <em>Athanasius contra mundum</em> — Athanasius against the world. His reply, essentially: <em>if the world is against the truth, then I am against the world.</em> The Nicene Creed, which the church still confesses, exists in no small part because of that stubbornness.</p>
+
+    <p>And Augustine. Born 354 AD in North Africa to a praying mother (Monica) and a pagan father, brilliant and restless, Augustine tried everything — Manichaeism, Neoplatonism, a career in rhetoric, an affair that lasted years — before being ambushed by grace in a garden in Milan in 386 AD while reading a passage from Paul. His <em>Confessions</em> remains one of the most extraordinary books ever written: a prayer, an autobiography, and a piece of theology all at once, full of sentences that still land like a fist. <em>"Our hearts are restless until they rest in Thee."</em> He became the most influential theologian in Western Christian history, and his thought shaped both the Reformation and the Catholic Counter-Reformation — each side claiming him.</p>
+
+    <div class="figure-row">
+      <span class="figure-tag">Ignatius of Antioch</span>
+      <span class="figure-tag">Polycarp</span>
+      <span class="figure-tag">Justin Martyr</span>
+      <span class="figure-tag">Tertullian</span>
+      <span class="figure-tag">Origen</span>
+      <span class="figure-tag">Athanasius</span>
+      <span class="figure-tag">Basil of Caesarea</span>
+      <span class="figure-tag">Gregory of Nazianzus</span>
+      <span class="figure-tag">John Chrysostom</span>
+      <span class="figure-tag">Augustine of Hippo</span>
+    </div>
+
+    <div class="box box-nuance toggle-nuance">
+      <div class="box-title">📚 For Further Study — The Church Fathers</div>
+      <ul class="resource-list">
+        <li><a href="https://www.ccel.org/fathers.html" target="_blank">CCEL: The Ante-Nicene and Post-Nicene Fathers</a> — The complete works of the church fathers, free online. Overwhelming in scope; wonderful to browse.</li>
+        <li><a href="https://www.ccel.org/ccel/augustine/confess.html" target="_blank">Augustine, <em>Confessions</em> (free at CCEL)</a> — Begin with Book 1. If it doesn't grab you by chapter 3, try again in a decade.</li>
+        <li><span class="book-ref">Michael Reeves, <em>Theologians You Should Know</em> (Crossway, 2016)</span> — Delightful biographical sketches of key figures from Augustine onward. This is the book to hand someone who is new to theological biography.</li>
+        <li><span class="book-ref">Nick Needham, <em>2000 Years of Christ's Power</em>, Vol. 1: The Age of the Early Church Fathers (Christian Focus, 2016)</span> — The most accessible and comprehensive survey of this period available at a popular level. Highly recommended.</li>
+        <li><a href="https://www.ligonier.org/learn/series/the-church-fathers" target="_blank">Ligonier Ministries: "The Church Fathers" series</a> — Short, well-produced video introductions.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div class="era-entry" id="canon">
+    <h2>How We Got the Bible: The Story of the Canon</h2>
+    <span class="era-dates">c. 50–400 AD</span>
+
+    <p>One of the most common misconceptions about the Bible is that a single council — usually invoked as a shadowy conclave of power-hungry bishops — voted to decide which books were "in" and which were "out." This is not what happened, and understanding what actually happened is both more interesting and more reassuring.</p>
+
+    <p>The canon of Scripture was not so much decided as <em>recognized</em>. The books that make up the New Testament were already being read, copied, circulated, and used to settle doctrinal disputes before anyone formally listed them. The process by which the church identified which texts carried the weight of apostolic authority was organic, sometimes messy, and took several centuries — but it converged. Letters from churches in Rome, Alexandria, Antioch, and Carthage, written independently, list substantially the same books. The outliers — the handful of books whose status was debated (Hebrews, James, 2 Peter, Revelation) — were not suppressed alternative gospels. They were texts with genuine questions about apostolic authorship.</p>
+
+    <p>The councils that eventually produced formal canonical lists — Laodicea (363 AD), Hippo (393 AD), Carthage (397 AD) — were not inventing the canon. They were codifying what the church had already been practicing. The criteria they applied were: Was it written by an apostle or an apostolic associate? Was it consistent with the rule of faith the church had always held? Was it being received and used by the church broadly? The 27 books of the New Testament passed these tests. The Gnostic gospels — often invoked as the great suppressed alternatives — were not serious contenders. They appeared much later, often claimed false authorship, and taught doctrines the church had been rebutting for generations.</p>
+
+    <div class="box box-plain toggle-plain">
+      <div class="box-title">📖 IN PLAIN TERMS: Why Did the Canon Close?</div>
+      <p>The canon "closed" not because some authority decided to stop listening to God, but because the apostolic generation — the direct eyewitnesses of Jesus — had died. Once that generation was gone, any new text claiming apostolic authority was by definition suspicious. The church's instinct was: we have what the eyewitnesses left us; we hold it carefully; we don't add to it. That instinct is consistent with the way Scripture speaks about itself: complete, sufficient, and authoritative (2 Timothy 3:16-17; Revelation 22:18-19). Closing the canon was an act of fidelity, not suppression.</p>
+    </div>
+
+    <div class="box box-nuance toggle-nuance">
+      <div class="box-title">📚 For Further Study — The Canon</div>
+      <ul class="resource-list">
+        <li><span class="book-ref">F.F. Bruce, <em>The Canon of Scripture</em> (IVP Academic, 1988)</span> — The standard scholarly treatment at an accessible level. Thorough, fair, and definitive.</li>
+        <li><span class="book-ref">Michael J. Kruger, <em>Canon Revisited</em> (Crossway, 2012)</span> — A rigorous defense of the canon's self-authenticating authority. More technical than Bruce but rewarding.</li>
+        <li><a href="https://www.thegospelcoalition.org/essay/formation-of-the-canon/" target="_blank">The Gospel Coalition: "The Formation of the Canon"</a> — A concise, reliable overview.</li>
+        <li><a href="https://www.ligonier.org/learn/articles/how-do-we-know-which-books-belong-in-the-bible" target="_blank">Ligonier: "How Do We Know Which Books Belong in the Bible?"</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div class="era-entry" id="medieval">
+    <h2>The Medieval Church</h2>
+    <span class="era-dates">c. 500–1500</span>
+
+    <p>The Middle Ages get a bad reputation — "the Dark Ages," the period of superstition between the glories of Rome and the light of the Renaissance. The reality is considerably more interesting, and considerably more complicated.</p>
+
+    <p>After the fall of Rome in 476 AD, the church became the primary bearer of civilization in the West. It was monks in Ireland and Britain who, huddled over their manuscripts, painstakingly copied and preserved the classical texts that would have otherwise been lost forever. Thomas Cahill's description in <em>How the Irish Saved Civilization</em> is not hyperbole: without those monks in their beehive huts on the Atlantic cliff-edges, the intellectual heritage of Greece and Rome would simply not exist today. The church was not the enemy of learning in this period. It was often its sole patron.</p>
+
+    <p>Bernard of Clairvaux (1090–1153) was the most influential churchman of his century — mystic, preacher, theologian, reluctant kingmaker — a man who could fill a city square with his preaching and then spend his days in contemplative prayer. He was deeply Christocentric in a way that was unusual for his era, and his devotional writings (including the hymn <em>O Sacred Head Now Wounded</em> and the poem behind <em>Jesus, the Very Thought of Thee</em>) sit comfortably on a Reformed bookshelf. Anselm of Canterbury (1033–1109) gave the Western church its most precise account of the atonement as satisfaction of divine justice — the conceptual foundation on which penal substitution is built.</p>
+
+    <p>And then Thomas Aquinas — vast, patient, brilliant, apparently so large that a semicircle had to be cut into his dining table. His <em>Summa Theologiae</em> is one of the most ambitious intellectual projects in history: a systematic integration of Aristotelian philosophy and Christian theology. The Reformers would push back hard against parts of it, particularly his account of grace and merit, but they were working in the categories he helped define.</p>
+
+    <p>The medieval period also gave us genuine spiritual decay — the corruption of the papacy, the abuse of indulgences, the entanglement of church and political power, the Crusades, and a growing gap between the Latin church and ordinary laypeople who could neither read nor understand the Mass. These were not peripheral problems. They set the stage for everything that followed.</p>
+
+    <div class="figure-row">
+      <span class="figure-tag">Gregory the Great</span>
+      <span class="figure-tag">Bede the Venerable</span>
+      <span class="figure-tag">Anselm of Canterbury</span>
+      <span class="figure-tag">Bernard of Clairvaux</span>
+      <span class="figure-tag">Francis of Assisi</span>
+      <span class="figure-tag">Thomas Aquinas</span>
+      <span class="figure-tag">John Wycliffe</span>
+      <span class="figure-tag">Jan Hus</span>
+    </div>
+
+    <div class="box box-nuance toggle-nuance">
+      <div class="box-title">⚖️ Pre-Reformers: Wycliffe and Hus</div>
+      <p>The Reformation did not arrive from nowhere. John Wycliffe (c. 1330–1384), an Oxford scholar, argued a century and a half before Luther that Scripture alone — not the pope or church councils — was the supreme authority for Christians. He produced the first complete English translation of the Bible. His followers (the Lollards) were persecuted, and his bones were posthumously exhumed and burned as a heretic. Jan Hus (1369–1415) took up Wycliffe's ideas in Bohemia, was promised safe conduct to a council to defend them, was burned at the stake anyway, and reportedly died singing. His last words were said to be: <em>You are roasting a goose now, but in a hundred years you will hear a swan singing, whom you will not be able to silence.</em> One hundred years later: Martin Luther. The Reformers knew they were not inventing something new — they were recovering something old.</p>
+    </div>
+
+    <div class="box box-nuance toggle-nuance">
+      <div class="box-title">📚 For Further Study — The Medieval Church</div>
+      <ul class="resource-list">
+        <li><span class="book-ref">Nick Needham, <em>2000 Years of Christ's Power</em>, Vol. 2: The Middle Ages (Christian Focus, 2016)</span> — Readable, thorough, and written from a Reformed perspective.</li>
+        <li><span class="book-ref">Thomas Cahill, <em>How the Irish Saved Civilization</em> (Anchor, 1995)</span> — Beautifully written; makes the early medieval period genuinely gripping.</li>
+        <li><span class="book-ref">Justo González, <em>The Story of Christianity</em>, Vol. 1, Part IV</span> — Reliable survey of the medieval period.</li>
+        <li><a href="https://www.ccel.org/ccel/anselm/basic_works.html" target="_blank">Anselm, <em>Cur Deus Homo</em> (Why God Became Man) — free at CCEL</a> — The foundational document for satisfaction atonement theology. Demanding but rewarding.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div class="era-entry" id="renaissance">
+    <h2>The Renaissance and the Road to Reformation</h2>
+    <span class="era-dates">c. 1300–1517</span>
+
+    <p>The Renaissance — the great rebirth of classical learning that swept through Italy from roughly the fourteenth century onward — seems at first glance like a story about painting and sculpture and Medici patronage, not a chapter in church history. But it prepared the ground for the Reformation in ways that cannot be overstated.</p>
+
+    <p>The humanists of the Renaissance did not set out to reform the church. What they did was recover the tools for doing so. The movement to return <em>ad fontes</em> — "to the sources," the original texts — produced scholars who could read the New Testament in Greek rather than through the centuries-thick lens of the Latin Vulgate. And when they read it in Greek, things looked different. Erasmus of Rotterdam (1466–1536), the greatest humanist scholar of his age, produced a critical edition of the Greek New Testament in 1516. He did not intend a revolution. He intended better scholarship. What he got was both.</p>
+
+    <p>Then there was the printing press. Johannes Gutenberg's invention (c. 1440) was the most consequential technological development in the history of Christianity since the codex replaced the scroll. Before the press, a Bible cost the equivalent of a farm. After it, pamphlets and texts could be produced in days and distributed across Europe in weeks. When Luther nailed his 95 Theses to the door at Wittenberg in October 1517, they were reprinted across Germany within a month. The Reformation was, among other things, the first great media event of the modern age. The church has never had an unambiguous relationship with new communication technology. The printing press was no exception.</p>
+
+    <div class="figure-row">
+      <span class="figure-tag">Petrarch</span>
+      <span class="figure-tag">Erasmus of Rotterdam</span>
+      <span class="figure-tag">Johannes Gutenberg</span>
+      <span class="figure-tag">Leonardo Bruni</span>
+      <span class="figure-tag">Thomas More</span>
+    </div>
+
+    <div class="box box-nuance toggle-nuance">
+      <div class="box-title">📚 For Further Study — The Renaissance</div>
+      <ul class="resource-list">
+        <li><span class="book-ref">Alister McGrath, <em>The Intellectual Origins of the European Reformation</em> (Blackwell, 1987)</span> — Scholarly but essential for understanding how Renaissance humanism fed the Reformation.</li>
+        <li><span class="book-ref">Michael Reeves, <em>The Unquenchable Flame</em> (IVP UK, 2009)</span> — Chapter 1 covers the late medieval and Renaissance background beautifully. This whole book is exceptional.</li>
+        <li><a href="https://www.thegospelcoalition.org/article/erasmus-and-the-reformation/" target="_blank">TGC: Erasmus and the Reformation</a> — A helpful overview of the humanist/Reformer relationship.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div class="era-entry" id="reformation">
+    <h2>The Reformation</h2>
+    <span class="era-dates">1517–1600</span>
+
+    <p>On the 31st of October, 1517, a German Augustinian monk nailed a list of academic debate propositions to the door of a castle church in a small university town. He was not trying to start a revolution. He was trying to have an argument with his colleagues. He did not get the argument he intended. He got the Reformation instead.</p>
+
+    <p>Martin Luther (1483–1546) had been tormented by a question: <em>How can I be righteous before a holy God?</em> The church's official answer — go to confession, do penance, accumulate merit, purchase indulgences — had failed to still the accusation that roared in his conscience. Then he read Romans. Slowly. Again and again. And in Psalm 31 and Romans 1:17 he found something that reordered everything: <em>the righteousness of God</em> is not what God demands from us, as if to crush us. It is what God <em>gives</em> us in Christ, freely, as a gift received by faith alone. The just shall live by faith. Luther described the discovery as feeling as though the gates of paradise had been thrown open. The 95 Theses were the overflow of that discovery applied to a specific abuse.</p>
+
+    <p>The church told Luther to recant. He was summoned before the Emperor at the Diet of Worms in 1521 and given one last chance. His answer — almost certainly edited slightly in the telling but substantially accurate — became one of the most famous sentences in Western history: <em>"Here I stand. I can do no other. God help me."</em> He was declared an outlaw. A friend kidnapped him for his own safety and hid him in a castle, where Luther spent ten months translating the New Testament into German — a translation so vivid it helped shape the modern German language itself.</p>
+
+    <p>John Calvin (1509–1564) came to the Reformation slightly later, through a different path, and brought to it a systematic mind that Luther lacked and probably would not have wanted. His <em>Institutes of the Christian Religion</em> — begun when he was twenty-six and revised throughout his life — remain the most comprehensive and rigorous account of Reformed theology ever written. Geneva under Calvin was not always comfortable — Calvin himself would have been the first to admit that the city and its church were imperfect instruments — but it became a school for the Reformed faith that sent pastors across France, the Low Countries, Scotland, and eventually England.</p>
+
+    <p>And William Tyndale. This quiet Englishman's ambition was simple: to give the ploughboy the Bible in his own language. "I will cause the boy who drives the plough to know more of the Scripture than you do," he reportedly told a clergyman who mocked him. He produced the first printed English New Testament (1526) and much of the Old Testament, working in hiding while the English crown hunted him. He was eventually caught in Antwerp, strangled at the stake, and his body burned in 1536. His dying prayer was reportedly: <em>"Lord, open the King of England's eyes."</em> Within three years, Henry VIII had authorized an English Bible — built largely on Tyndale's translation — for every English parish church. His prayer was answered with remarkable speed. Much of what the King James Bible sounds like, it sounds like because of William Tyndale.</p>
+
+    <div class="figure-row">
+      <span class="figure-tag">Martin Luther</span>
+      <span class="figure-tag">Philip Melanchthon</span>
+      <span class="figure-tag">Ulrich Zwingli</span>
+      <span class="figure-tag">John Calvin</span>
+      <span class="figure-tag">Heinrich Bullinger</span>
+      <span class="figure-tag">William Tyndale</span>
+      <span class="figure-tag">Thomas Cranmer</span>
+      <span class="figure-tag">John Knox</span>
+      <span class="figure-tag">Theodore Beza</span>
+    </div>
+
+    <div class="box box-nuance toggle-nuance">
+      <div class="box-title">📚 For Further Study — The Reformation</div>
+      <ul class="resource-list">
+        <li><span class="book-ref">Michael Reeves, <em>The Unquenchable Flame: Introducing the Reformation</em> (IVP UK, 2009)</span> — The single best introduction to the Reformation for the general reader. It reads like a thriller. Start here.</li>
+        <li><a href="https://www.youtube.com/playlist?list=PLX4EImuBph1y2oYsaxqS0ER7aDgIhTHlD" target="_blank">Michael Reeves, "The Reformation" lectures (Union School of Theology, YouTube)</a> — The book in lecture form. Excellent.</li>
+        <li><span class="book-ref">Alister McGrath, <em>Christianity's Dangerous Idea</em> (HarperOne, 2007)</span> — Broader account of the entire Protestant tradition from Reformation to present. Thorough and balanced.</li>
+        <li><span class="book-ref">Nick Needham, <em>2000 Years of Christ's Power</em>, Vol. 3: Renaissance and Reformation (Christian Focus, 2016)</span></li>
+        <li><a href="https://www.ligonier.org/learn/series/the-history-and-theology-of-calvinism" target="_blank">Ligonier: "The History and Theology of Calvinism" series</a> — Comprehensive video series covering Calvin's life and legacy.</li>
+        <li><a href="https://www.monergism.com/thethreshold/articles/onsite/reformers.html" target="_blank">Monergism: Reformer biographies and writings</a> — Free primary sources and biographical essays.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div class="era-entry" id="puritan">
+    <h2>The Puritan Era — England, Scotland, and a New World</h2>
+    <span class="era-dates">1558–1700</span>
+
+    <p>The Puritans have suffered at the hands of their reputation. The word "Puritan" today conjures joyless killjoys in black hats who banned dancing. The actual Puritans — as anyone who has read them discovers with some surprise — were passionate, warm, often funny, ferociously interested in theology, and deeply committed to the idea that the whole of ordinary life could be lived as an act of worship to God. Richard Baxter wrote more warmly about married love than most modern marriage manuals. Thomas Watson could be genuinely witty. John Owen wrote enough books to fill a small library — and you can still pick them up and find them alive.</p>
+
+    <p>The Puritan movement grew out of the English Reformation's unfinished business. Henry VIII had broken with Rome in 1534 — primarily for dynastic rather than theological reasons — and the Church of England that emerged was a compromise creature: Protestant in some ways, Catholic in its vestments and episcopal structure. The Puritans wanted to push the reform further, to purify the church of what they saw as remaining Catholic corruptions. Queen Elizabeth I largely resisted them. James I famously threatened to "harry them out of the land." He fulfilled the threat, accidentally, by failing to fulfill it: the pressure he maintained drove a significant portion of Puritan leadership toward the question of whether England could be reformed at all.</p>
+
+    <p>Scotland had its own Reformation, fiercer and more thoroughgoing than England's, under the towering figure of John Knox (1514–1572) — who had spent time as a French galley slave for his faith, studied under Calvin in Geneva, and came back to Scotland determined to build a genuinely Reformed church. He reportedly made Mary Queen of Scots weep with his preaching and showed no signs of regret about it. The Church of Scotland that Knox shaped — Presbyterian, doctrinally Reformed, marked by a seriousness about Scripture that bordered on severity — became the training ground for a remarkable generation of theologians and preachers.</p>
+
+    <p>The Westminster Assembly (1643–1648) gathered 121 English clergymen and 30 laypeople, along with Scottish commissioners, in the Jerusalem Chamber of Westminster Abbey. Its assignment was to produce a theological standard for the church. What it produced — the Westminster Confession of Faith, the Larger Catechism, and the Shorter Catechism — became the defining confessional documents of the English-speaking Reformed tradition. The Shorter Catechism's opening question — <em>What is the chief end of man?</em> — and its answer — <em>To glorify God, and to enjoy him forever</em> — is perhaps the most beautiful sentence the English theological tradition has ever produced.</p>
+
+    <p>John Owen (1616–1683) is the theological giant of the Puritan era — preacher, Vice-Chancellor of Oxford University, Cromwell's chaplain, and author of an astonishing body of work on the Holy Spirit, the atonement, indwelling sin, and the mortification of sin that the Reformed tradition has never surpassed. He wrote sentences like cathedrals — vast, load-bearing, requiring patience to navigate. John Bunyan (1628–1688), his near-contemporary, wrote <em>The Pilgrim's Progress</em> in a Bedford prison after refusing to stop preaching without a license. It became the bestselling book in the English language after the Bible — and remains one of the most honest and vivid accounts of the Christian life ever written.</p>
+
+    <div class="figure-row">
+      <span class="figure-tag">John Knox</span>
+      <span class="figure-tag">William Perkins</span>
+      <span class="figure-tag">Richard Sibbes</span>
+      <span class="figure-tag">John Owen</span>
+      <span class="figure-tag">Richard Baxter</span>
+      <span class="figure-tag">Thomas Watson</span>
+      <span class="figure-tag">John Bunyan</span>
+      <span class="figure-tag">Thomas Goodwin</span>
+      <span class="figure-tag">Samuel Rutherford</span>
+    </div>
+
+    <div class="box box-nuance toggle-nuance">
+      <div class="box-title">📚 For Further Study — The Puritans</div>
+      <ul class="resource-list">
+        <li><span class="book-ref">Leland Ryken, <em>Worldly Saints: The Puritans as They Really Were</em> (Zondervan, 1986)</span> — The essential corrective to every caricature. Readable, thoroughly researched, and often surprising.</li>
+        <li><span class="book-ref">Joel Beeke &amp; Randall Pederson, <em>Meet the Puritans</em> (Reformation Heritage, 2006)</span> — Biographical introductions to 150 Puritan authors with reading recommendations. An extraordinary reference work.</li>
+        <li><span class="book-ref">J.I. Packer, <em>A Quest for Godliness: The Puritan Vision of the Christian Life</em> (Crossway, 1990)</span> — The finest single-volume introduction to Puritan spirituality from a sympathetic and rigorous scholar.</li>
+        <li><a href="https://www.chapellibrary.org/books/puritan" target="_blank">Chapel Library: Free Puritan writings online</a> — Accessible selections from Owen, Watson, Bunyan, and others.</li>
+        <li><a href="https://www.youtube.com/watch?v=kH7x_MFXK_A" target="_blank">Michael Reeves, "The Puritans" lecture (Union School of Theology)</a></li>
+        <li><span class="book-ref">John Bunyan, <em>The Pilgrim's Progress</em></span> — <a href="https://www.ccel.org/ccel/bunyan/pilgrim.html" target="_blank">Free at CCEL.</a> Read it. Really.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div class="era-entry" id="america">
+    <h2>Puritanism and the Making of America</h2>
+    <span class="era-dates">1620–1800</span>
+
+    <p>The people who sailed on the <em>Mayflower</em> in 1620 were not running away from England. They were, in their own self-understanding, building something. John Winthrop's famous sermon aboard the <em>Arabella</em> in 1630 — "We shall be as a city upon a hill" — was not modest. He was describing a covenant community: a people who had made a solemn agreement with God to build a society shaped by his word, and who understood that their failure would be visible to the watching world. That sense of providential calling — of America as a place where something specific and important is happening — has shaped American national identity in ways that persist long after the explicit theology has faded.</p>
+
+    <p>The Puritans brought with them more than their theology. They brought their political theory. Calvinist and Reformed thought, with its deep suspicion of concentrated power, its emphasis on covenant (mutual agreement, accountability, consent), and its insistence that Scripture was the norm for all of life including government, fed directly into the democratic republican instincts that would eventually produce the American founding. The Mayflower Compact (1620) — a written agreement among the settlers to govern themselves by consent — is often called the first governing document in American history. It grew naturally from Puritan covenantal thinking. Many of the Founding Fathers, including those who were not orthodox Christians, were shaped by this intellectual and political inheritance even when they rejected its theological premises.</p>
+
+    <p>The relationship between Puritan New England and the broader American project is complex and should not be idealized. The same covenantal seriousness that produced representative government also produced the Salem witch trials. The same missionary impulse that drove Puritan pastors deep into wilderness communities to preach the gospel also coexisted, sometimes in the same person, with attitudes toward Indigenous peoples that were far from the gospel they proclaimed. The "city on a hill" vision was simultaneously genuinely noble and, in its application, sometimes provincial and cruel. The American church is still working through that inheritance.</p>
+
+    <div class="figure-row">
+      <span class="figure-tag">William Bradford</span>
+      <span class="figure-tag">John Winthrop</span>
+      <span class="figure-tag">Cotton Mather</span>
+      <span class="figure-tag">Roger Williams</span>
+      <span class="figure-tag">Jonathan Edwards</span>
+    </div>
+
+    <div class="box box-nuance toggle-nuance">
+      <div class="box-title">📚 For Further Study — Puritanism and America</div>
+      <ul class="resource-list">
+        <li><span class="book-ref">Iain Murray, <em>The Puritan Hope</em> (Banner of Truth, 1971)</span> — Classic account of how Puritan eschatology drove missionary vision and shaped early American Christianity.</li>
+        <li><span class="book-ref">Perry Miller, <em>The New England Mind</em> (Harvard, 1939)</span> — Dense but essential for the serious student. The foundational academic account of Puritan thought in America.</li>
+        <li><span class="book-ref">Mark Noll, <em>A History of Christianity in the United States and Canada</em> (Eerdmans, 1992)</span> — The best single-volume survey of American church history by one of its finest scholars.</li>
+        <li><a href="https://www.thegospelcoalition.org/article/puritans-and-the-founding-of-america/" target="_blank">TGC: "The Puritans and the Founding of America"</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div class="era-entry" id="awakening">
+    <h2>The Great Awakening and the Evangelical Revival</h2>
+    <span class="era-dates">1700–1800</span>
+
+    <p>By the early eighteenth century, the spiritual energy of the Puritan generation had largely dissipated. The churches remained. The forms remained. The fire was mostly out. Then, within a few years of each other on opposite sides of the Atlantic, it was lit again.</p>
+
+    <p>George Whitefield (1714–1770) is possibly the greatest preacher in the history of the English-speaking world — certainly the most widely heard, in an era before microphones. He preached to crowds of 20,000–30,000 in the open air, his voice reportedly able to carry a quarter-mile in calm weather. He crossed the Atlantic thirteen times in the era of sailing ships, preached in every colony, and was as well-known in Boston as in Bristol. Benjamin Franklin — skeptic, empiricist, not a man easily impressed by religious enthusiasm — calculated the distance he could stand from Whitefield in Philadelphia and still hear him clearly, and reported the result with unconcealed admiration. Whitefield made no secret of the gospel he preached: you must be born again. That conviction shaped American evangelical identity in ways that persist today.</p>
+
+    <p>Jonathan Edwards (1703–1758) gave the Great Awakening its theological mind. Pastor of a small congregation in Northampton, Massachusetts, he watched genuine revival break out in his own church in 1734-35 and began the careful work of distinguishing true spiritual transformation from its counterfeits — work that produced <em>A Treatise Concerning Religious Affections</em>, one of the most searching examinations of the inner life ever written. Edwards is often described as America's greatest theologian — a title he probably would have declined, not from false modesty, but from genuine indifference to such things. His mind ran to God. Everything else was a corollary.</p>
+
+    <p>In England, John Wesley (1703–1791) and his brother Charles (who gave the church over 6,000 hymns) launched the Methodist movement — a renewal within Anglicanism that eventually became its own denomination. Wesley rode 250,000 miles on horseback and preached 40,000 sermons. He and Whitefield, close friends, parted on the question of predestination — Whitefield Reformed, Wesley Arminian — but shared an absolute conviction that the gospel was for everyone and that the church had no right to remain comfortable while ordinary people lived and died without hearing it.</p>
+
+    <div class="figure-row">
+      <span class="figure-tag">Jonathan Edwards</span>
+      <span class="figure-tag">George Whitefield</span>
+      <span class="figure-tag">John Wesley</span>
+      <span class="figure-tag">Charles Wesley</span>
+      <span class="figure-tag">Gilbert Tennent</span>
+    </div>
+
+    <div class="box box-nuance toggle-nuance">
+      <div class="box-title">📚 For Further Study — The Awakenings</div>
+      <ul class="resource-list">
+        <li><span class="book-ref">Jonathan Edwards, <em>A Treatise Concerning Religious Affections</em></span> — <a href="https://www.ccel.org/ccel/edwards/affections.html" target="_blank">Free at CCEL.</a> Essential reading on genuine versus counterfeit spiritual experience.</li>
+        <li><span class="book-ref">Iain Murray, <em>Jonathan Edwards: A New Biography</em> (Banner of Truth, 1987)</span> — Definitive and readable. One of the great Christian biographies.</li>
+        <li><span class="book-ref">Arnold Dallimore, <em>George Whitefield</em>, 2 vols. (Banner of Truth, 1970, 1980)</span> — Monumental biography of the greatest preacher of the Awakening.</li>
+        <li><a href="https://www.thegospelcoalition.org/essay/first-great-awakening/" target="_blank">TGC: "The First Great Awakening"</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div class="era-entry" id="missions">
+    <h2>The Great Century of Missions</h2>
+    <span class="era-dates">1792–1914 (and beyond)</span>
+
+    <p>William Carey (1761–1834) was a cobbler in Northamptonshire who had taught himself Greek, Hebrew, Dutch, and French while mending shoes. In 1792 he stood before a gathering of Baptist ministers and gave what may be the most consequential sermon in the history of Protestant missions: "Expect great things from God; attempt great things for God." A colleague later said that Carey grabbed his coat when he sat down and said, "If we don't do something tonight, nothing will ever be done." Something was done. In 1793, Carey sailed to India, never to return to England. He spent the next forty years translating Scripture into Bengali, Sanskrit, and twenty-seven other languages and dialects. He helped found the modern Protestant missionary movement almost single-handedly.</p>
+
+    <p>Hudson Taylor (1832–1905) went further — literally. Not content with the port cities where Western missionaries clustered, he pushed into the interior of China, adopted Chinese dress and customs (scandalizing respectable missionary colleagues), founded the China Inland Mission on faith principles (no guaranteed income, no debt, trust God to provide), and saw the gospel take root in regions no Western missionary had ever visited. His principle: "There is a living God. He has spoken in the Bible. He means what he says and will do all he has promised." He lost his first wife and two children in China and went back.</p>
+
+    <p>The missionary movement of the nineteenth century is one of the most remarkable chapters in Christian history — and one of the most complicated. It traveled alongside European colonialism, often shared its assumptions, and sometimes did active damage. The honest account holds both: genuine gospel proclamation that transformed communities, and cultural imperialism that imposed Western forms alongside the faith. The Christianity that exists today in sub-Saharan Africa, South Korea, and across the Global South is in large part the fruit of this era — a fruit the missionaries themselves could not have fully anticipated, which is now making the Western church look thin by comparison.</p>
+
+    <p>Amy Carmichael (1867–1951) went to India at twenty-eight and didn't come home for fifty-five years. She spent much of her time rescuing children from temple prostitution, founding the Dohnavur Fellowship, and writing devotional literature of striking beauty from a sickbed. Jim Elliot (1927–1956) was killed at twenty-eight by the Auca people he had gone to reach in Ecuador, leaving a journal whose last complete entry contains the sentence that has become his epitaph: <em>"He is no fool who gives what he cannot keep to gain what he cannot lose."</em> Elisabeth Elliot, his wife, went back to the people who had killed her husband and saw many of them become Christians.</p>
+
+    <div class="figure-row">
+      <span class="figure-tag">William Carey</span>
+      <span class="figure-tag">Adoniram Judson</span>
+      <span class="figure-tag">David Livingstone</span>
+      <span class="figure-tag">Hudson Taylor</span>
+      <span class="figure-tag">Amy Carmichael</span>
+      <span class="figure-tag">C.T. Studd</span>
+      <span class="figure-tag">Jim Elliot</span>
+      <span class="figure-tag">Elisabeth Elliot</span>
+    </div>
+
+    <div class="box box-nuance toggle-nuance">
+      <div class="box-title">📚 For Further Study — Missions</div>
+      <ul class="resource-list">
+        <li><span class="book-ref">Ruth Tucker, <em>From Jerusalem to Irian Jaya: A Biographical History of Christian Missions</em> (Zondervan, 2004)</span> — The most engaging single-volume survey of the entire missionary movement. Organized by biography, not chronology — which means you can read it anywhere.</li>
+        <li><span class="book-ref">Stephen Neill, <em>A History of Christian Missions</em> (Penguin, 1964)</span> — The scholarly standard. Dense but comprehensive and reliable.</li>
+        <li><span class="book-ref">John Pollock, <em>Hudson Taylor and Maria</em> (Overseas Missionary Fellowship, 1962)</span> — Compelling biography of Taylor.</li>
+        <li><span class="book-ref">Elisabeth Elliot, <em>Through Gates of Splendor</em> (Tyndale, 1957)</span> — The story of the five missionaries killed by the Auca. Still one of the most powerful missionary accounts ever written.</li>
+        <li><a href="https://www.desiringgod.org/messages/you-are-the-history-of-missions" target="_blank">John Piper's biographical missions lectures (Desiring God)</a> — Richly detailed "Heroes of the Faith" profiles.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div class="era-entry" id="modern">
+    <h2>The Modern Church</h2>
+    <span class="era-dates">1900–present</span>
+
+    <p>The twentieth century was the worst and best of centuries for the church simultaneously — which is, on reflection, how most centuries have felt from the inside.</p>
+
+    <p>In the West, the Fundamentalist-Modernist controversy of the 1910s–1920s split American Protestantism down the middle. The question was stark: could the historic doctrines of Christianity — the virgin birth, the bodily resurrection, the authority of Scripture, the atonement — be maintained in a culture shaped by Darwinism, higher biblical criticism, and liberal progressivism? The fundamentalists said yes and must be. The modernists said the doctrines needed to be reinterpreted or abandoned. J. Gresham Machen (1881–1937), a Princeton scholar of the first rank, argued with devastating precision in <em>Christianity and Liberalism</em> (1923) that liberal theology was not a revised form of Christianity — it was a different religion. He founded Westminster Theological Seminary when Princeton capitulated and the Presbyterian Church eventually defrocked him. He was right about the diagnosis. The mainline denominations that embraced liberalism have spent the subsequent century in demographic collapse.</p>
+
+    <p>Dietrich Bonhoeffer (1906–1945) gave the century its most costly witness. A German Lutheran pastor and theologian, he opposed the Nazi regime from its first days, helped found the Confessing Church as an alternative to the German church's capitulation to Hitler, ran an illegal underground seminary, and eventually became involved in the conspiracy to assassinate Hitler. He was hanged in a concentration camp on April 9, 1945 — three weeks before Germany surrendered. His <em>The Cost of Discipleship</em> and <em>Letters and Papers from Prison</em> are essential documents of the century. A man who knew that following Christ cost everything, and who wrote about that cost from inside it.</p>
+
+    <p>The most important story of the twentieth-century church, however, is not the decline of the West. It is the explosive growth of Christianity in the Global South. In 1900, roughly 80% of the world's Christians lived in Europe and North America. By 2020, the majority lived in Africa, Asia, and Latin America — and the numbers were growing fastest there. The Pentecostal and charismatic movements, largely despised by the established churches when they emerged in the early twentieth century, became the fastest-growing expression of Christianity in history. Whatever one makes of the theological questions these movements raise, the fact of their growth is a striking challenge to any assumption that the future of the faith lies with the Western church.</p>
+
+    <p>The late twentieth century also saw a remarkable Reformed renewal — the recovery, particularly in the English-speaking world, of the confessional Reformed and Puritan tradition through publishers like Banner of Truth, theologians like J.I. Packer, R.C. Sproul, John Piper, and later Tim Keller, and preaching that took both the doctrines of grace and the integration of faith and culture seriously. That renewal is the intellectual water in which this curriculum swims.</p>
+
+    <div class="figure-row">
+      <span class="figure-tag">J. Gresham Machen</span>
+      <span class="figure-tag">Dietrich Bonhoeffer</span>
+      <span class="figure-tag">C.S. Lewis</span>
+      <span class="figure-tag">Martyn Lloyd-Jones</span>
+      <span class="figure-tag">Billy Graham</span>
+      <span class="figure-tag">Francis Schaeffer</span>
+      <span class="figure-tag">J.I. Packer</span>
+      <span class="figure-tag">R.C. Sproul</span>
+      <span class="figure-tag">John Piper</span>
+      <span class="figure-tag">Tim Keller</span>
+    </div>
+
+    <div class="box box-nuance toggle-nuance">
+      <div class="box-title">📚 For Further Study — The Modern Church</div>
+      <ul class="resource-list">
+        <li><span class="book-ref">J. Gresham Machen, <em>Christianity and Liberalism</em> (1923)</span> — <a href="https://www.ccel.org/ccel/machen/liberalism.html" target="_blank">Free at CCEL.</a> Prophetic, precise, and more relevant than ever.</li>
+        <li><span class="book-ref">Dietrich Bonhoeffer, <em>The Cost of Discipleship</em> (SCM, 1937)</span> — Read slowly. Every chapter has weight.</li>
+        <li><span class="book-ref">Alister McGrath, <em>Christianity's Dangerous Idea</em> (HarperOne, 2007)</span> — Covers the full arc of Protestant history into the present day, including the Global South explosion.</li>
+        <li><span class="book-ref">Philip Jenkins, <em>The Next Christendom: The Coming of Global Christianity</em> (Oxford, 2002)</span> — The essential account of the shift of Christianity's center of gravity to the Global South.</li>
+        <li><a href="https://www.ligonier.org/learn/series/church-history" target="_blank">Ligonier Ministries: Church History Series</a> — Wide-ranging accessible video content.</li>
+        <li><a href="https://www.uniontheology.org" target="_blank">Union School of Theology (Michael Reeves)</a> — Lectures, articles, and resources on theology and church history in the Reformed tradition.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div class="box box-nuance toggle-nuance" style="margin-top:3rem;">
+    <div class="box-title">📚 Essential Church History Library — Where to Begin</div>
+    <p>If you are new to church history and want a starting library, here are five books in roughly the order you should read them:</p>
+    <ol class="resource-list">
+      <li><span class="book-ref">Michael Reeves, <em>Theologians You Should Know</em> (Crossway, 2016)</span> — Brief, engaging biographical portraits. A perfect entry point.</li>
+      <li><span class="book-ref">Michael Reeves, <em>The Unquenchable Flame</em> (IVP UK, 2009)</span> — The Reformation, made riveting. You will finish it in two sittings.</li>
+      <li><span class="book-ref">Justo González, <em>The Story of Christianity</em>, 2 vols. (HarperOne, 2010)</span> — The most readable comprehensive survey available. Vol. 1 covers the early church through the Reformation; Vol. 2 covers the Reformation to the present.</li>
+      <li><span class="book-ref">Nick Needham, <em>2000 Years of Christ's Power</em>, 4 vols. (Christian Focus, 2016)</span> — More detailed and from a distinctly Reformed perspective. Excellent companion to González.</li>
+      <li><span class="book-ref">Philip Schaff, <em>History of the Christian Church</em>, 8 vols.</span> — <a href="https://www.ccel.org/ccel/schaff" target="_blank">Free at CCEL.</a> The 19th-century classic. Massive, but endlessly rewarding to dip into.</li>
+    </ol>
+  </div>
+
+  <p style="margin-top:2.5rem; color: var(--ink-muted); font-size: 0.92rem;">← <a href="resources.html">Resources</a> &nbsp; <a href="map.html">Curriculum Map</a> &nbsp; <a href="module1.html">Begin the Curriculum →</a></p>
+
+</main>
+</div>
+<div class="toggle-panel">
+  <div class="toggle-panel-title">Show / Hide</div>
+  <label class="toggle-item"><input type="checkbox" id="toggle-nuance" checked><span class="toggle-dot" style="background:var(--nuance-bdr)"></span>⚖️ Nuance &amp; Deep Dives</label>
+  <label class="toggle-item"><input type="checkbox" id="toggle-plain" checked><span class="toggle-dot" style="background:var(--plain-bdr)"></span>📖 Plain Language</label>
+</div>
+<script src="script.js"></script>
+<script>
+(function() {
+  var ham = document.getElementById('hamburger');
+  var sidebar = document.querySelector('.sidebar');
+  var overlay = document.getElementById('navOverlay');
+  var panel = document.querySelector('.toggle-panel');
+
+  if (ham && sidebar && overlay) {
+    function openNav() { sidebar.classList.add('open'); overlay.classList.add('open'); ham.classList.add('open'); }
+    function closeNav() { sidebar.classList.remove('open'); overlay.classList.remove('open'); ham.classList.remove('open'); }
+    ham.addEventListener('click', function() { sidebar.classList.contains('open') ? closeNav() : openNav(); });
+    overlay.addEventListener('click', closeNav);
+  }
+
+  if (panel) {
+    var icon = document.createElement('div');
+    icon.className = 'toggle-panel-icon';
+    icon.textContent = '⚙️';
+    panel.insertBefore(icon, panel.firstChild);
+    panel.addEventListener('click', function(e) {
+      if (!panel.classList.contains('panel-open')) { panel.classList.add('panel-open'); e.stopPropagation(); }
+    });
+    document.addEventListener('click', function(e) {
+      if (panel.classList.contains('panel-open') && !panel.contains(e.target)) { panel.classList.remove('panel-open'); }
+    });
+  }
+})();
+</script>
+</body>
+</html>
