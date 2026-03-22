@@ -743,6 +743,82 @@ em { font-style: italic; }
 
 .cross-link-note a { color: var(--teal); border-bottom: 1px dashed var(--teal-light); }
 
+/* ── In-page anchor nav (heresy-nav) ─────────────────────── */
+/* Previously only defined inline in module11.html — now global */
+.heresy-nav {
+  background: var(--cream-dark);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+  font-size: 0.88rem;
+  line-height: 2.1;
+}
+.heresy-nav strong {
+  display: block;
+  font-family: 'Cormorant SC', serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 0.3rem;
+}
+.heresy-nav a {
+  color: var(--teal);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s;
+  margin-right: 0.3rem;
+  white-space: nowrap;
+}
+.heresy-nav a:hover { border-bottom-color: var(--teal-light); }
+
+/* ── Resource list (supplementary pages) ─────────────────── */
+/* Previously only defined inline in church-history.html — now global */
+.resource-list {
+  margin: 0.5rem 0 0 0;
+  padding-left: 1.2rem;
+  font-size: 0.93rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+.resource-list li { margin-bottom: 0.2rem; }
+.resource-list a { color: var(--teal); }
+.resource-list .book-ref {
+  color: var(--ink-muted);
+  font-style: italic;
+}
+
+/* ── Responsive: heresy-nav at narrow widths ──────────────── */
+@media (max-width: 480px) {
+  .heresy-nav {
+    font-size: 0.85rem;
+    padding: 0.85rem 1rem;
+    line-height: 2.3;   /* more vertical space so wrapped links don't crowd */
+  }
+  .heresy-nav a {
+    display: inline-block;
+    margin-bottom: 0.1rem;
+    white-space: normal;
+  }
+}
+
+/* ── Responsive: toggle panel z-index safety ─────────────── */
+/* Ensure toggle panel never overlaps the sticky mobile nav bar */
+@media (max-width: 900px) {
+  .toggle-panel {
+    /* Keep below mobile bar (48px) with a safe margin */
+    top: calc(48px + 0.5rem);
+  }
+  .toggle-panel.panel-open {
+    top: calc(48px + 0.5rem);
+  }
+}
+
+/* ── Responsive: iPad (768px) padding improvement ────────── */
+/* The 900px breakpoint jumps straight to mobile padding.
+   Add a mid-tier for tablets so content isn't too tight. */
+@media (min-width: 600px) and (max-width: 900px) {
+  .main { padding: 2.5rem 2rem; }
+}
 
 /* ── Print Stylesheet ─────────────────────────────────────── */
 @media print {
