@@ -833,7 +833,73 @@ em { font-style: italic; }
 }
 
 /* ── Print Stylesheet ─────────────────────────────────────── */
+/* ── Scripture Tooltip ────────────────────────────────────── */
+.sv-ref {
+  border-bottom: 1px dashed var(--teal);
+  cursor: help;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+#sv-tooltip-el {
+  position: fixed;
+  z-index: 9999;
+  max-width: min(360px, calc(100vw - 20px));
+  background: var(--cream-light, #fdfaf4);
+  border: 1px solid var(--teal, #4a7b7b);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+
+#sv-tooltip-el.sv-visible {
+  opacity: 1;
+}
+
+.sv-tt-ref {
+  display: block;
+  font-family: 'Cormorant SC', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal, #4a7b7b);
+  margin-bottom: 0.4rem;
+}
+
+.sv-tt-text {
+  display: block;
+  font-style: italic;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--ink-soft, #3a3228);
+}
+
+.sv-tt-src {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--ink-muted, #8a7a6a);
+  margin-top: 0.45rem;
+  letter-spacing: 0.04em;
+}
+
 @media print {
+  .sv-ref { border-bottom: none; }
+  #sv-tooltip-el { display: none !important; }
+}
+
+@media (max-width: 600px) {
+  #sv-tooltip-el { font-size: 0.85rem; }
+}
+
+@media (hover: none) {
+  /* Touch devices: underline refs more visibly */
+  .sv-ref { border-bottom: 1px solid var(--teal); }
+}
+
+
 
   /* Page setup */
   @page {
