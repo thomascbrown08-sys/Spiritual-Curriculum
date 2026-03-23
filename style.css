@@ -899,8 +899,7 @@ em { font-style: italic; }
   .sv-ref { border-bottom: 1px solid var(--teal); }
 }
 
-
-
+@media print {
   /* Page setup */
   @page {
     size: letter;
