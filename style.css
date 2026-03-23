@@ -655,7 +655,7 @@ em { font-style: italic; }
   /* Toggle panel collapses to icon button on mobile */
   .toggle-panel {
     right: 0.5rem;
-    top: 0.5rem; /* still fixed, but below mobile bar effectively */
+    top: calc(48px + 0.5rem);
     min-width: unset;
     padding: 0;
     border-radius: 50%;
@@ -671,13 +671,20 @@ em { font-style: italic; }
   .toggle-panel.panel-open {
     border-radius: 10px;
     width: auto;
+    max-width: calc(100vw - 1rem);   /* never wider than viewport */
+    box-sizing: border-box;
     height: auto;
-    padding: 1rem 1.2rem;
+    padding: 0.9rem 1rem;
     right: 0.5rem;
-    top: 3.5rem; /* below mobile nav bar */
+    top: calc(48px + 0.5rem);
+    overflow: visible;
   }
   .toggle-panel.panel-open .toggle-panel-title { display: block; }
-  .toggle-panel.panel-open .toggle-item { display: flex; }
+  .toggle-panel.panel-open .toggle-item {
+    display: flex;
+    font-size: 0.88rem;   /* slightly smaller so labels fit on narrow screens */
+    white-space: nowrap;
+  }
   .toggle-panel-icon {
     font-size: 1.1rem;
     line-height: 1;
@@ -702,6 +709,11 @@ em { font-style: italic; }
   h1 { font-size: 1.6rem; }
   .box { padding: 1rem 1.1rem; }
   .toggle-panel { right: 0.25rem; }
+  .toggle-panel.panel-open {
+    right: 0.25rem;
+    max-width: calc(100vw - 0.5rem);
+    padding: 0.8rem 0.85rem;
+  }
   .principle-row { grid-template-columns: 1fr !important; }
   .pillar-verse { padding: 1rem; font-size: 0.97rem; }
   .healing-card { padding: 1.1rem 1.25rem; }
