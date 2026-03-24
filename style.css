@@ -833,7 +833,49 @@ em { font-style: italic; }
 }
 
 /* ── Print Stylesheet ─────────────────────────────────────── */
-/* ── Scripture Tooltip ────────────────────────────────────── */
+/* ── Pull Quotes ──────────────────────────────────────────── */
+.pull-quote {
+  margin: 2.2rem 0 2.2rem 1.5rem;
+  padding: 1.1rem 1.4rem 1rem 1.6rem;
+  border-left: 3px solid var(--gold);
+  background: var(--cream-dark);
+  border-radius: 0 6px 6px 0;
+}
+
+.pull-quote blockquote {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.pull-quote blockquote::before {
+  content: '\201C';
+  font-size: 2.4rem;
+  line-height: 0;
+  vertical-align: -0.55rem;
+  margin-right: 0.15rem;
+  color: var(--gold);
+  font-family: 'Cormorant SC', serif;
+}
+
+.pull-quote cite {
+  display: block;
+  margin-top: 0.6rem;
+  font-family: 'Cormorant SC', serif;
+  font-size: 0.78rem;
+  font-style: normal;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+}
+
+@media (max-width: 640px) {
+  .pull-quote { margin-left: 0; }
+}
+
+
 .sv-ref {
   border-bottom: 1px dashed var(--teal);
   cursor: help;
