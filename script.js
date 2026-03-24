@@ -9,18 +9,23 @@
     { id: 'toggle-plain',       cls: 'hide-plain',       key: 'sb-plain',       def: '1' },
   ];
 
+  // sessionStorage (not localStorage) so preferences reset on each new visit.
+  // This prevents old saved state from silently hiding newly-added content.
+  // Preferences still persist as readers navigate between pages in one sitting.
+  const store = window.sessionStorage;
+
   function applyState(t, checked) {
     document.body.classList.toggle(t.cls, !checked);
-    try { localStorage.setItem(t.key, checked ? '1' : '0'); } catch(e) {}
+    try { store.setItem(t.key, checked ? '1' : '0'); } catch(e) {}
   }
 
   document.addEventListener('DOMContentLoaded', function () {
     TOGGLES.forEach(function (t) {
       const el = document.getElementById(t.id);
       if (!el) return;
-      // Restore saved state, falling back to per-toggle default
+      // Restore saved state for this session, falling back to per-toggle default
       let saved = t.def;
-      try { saved = localStorage.getItem(t.key) ?? t.def; } catch(e) {}
+      try { saved = store.getItem(t.key) ?? t.def; } catch(e) {}
       el.checked = saved === '1';
       applyState(t, el.checked);
       el.addEventListener('change', function () { applyState(t, el.checked); });
