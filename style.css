@@ -652,19 +652,21 @@ em { font-style: italic; }
   .hamburger.open span:nth-child(2) { opacity: 0; }
   .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-  /* Toggle panel collapses to icon button on mobile */
+  /* Toggle panel collapses to icon button on mobile — bottom-right for thumb access */
   .toggle-panel {
-    right: 0.5rem;
-    top: calc(48px + 0.5rem);
+    right: 1rem;
+    bottom: 1.5rem;
+    top: auto;              /* Override desktop top positioning */
     min-width: unset;
     padding: 0;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 44px;            /* Larger tap target (recommended 44px minimum) */
+    height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.22);
   }
   .toggle-panel-title { display: none; }
   .toggle-item { display: none; }
@@ -672,12 +674,15 @@ em { font-style: italic; }
     border-radius: 10px;
     width: auto;
     max-width: calc(100vw - 1rem);   /* never wider than viewport */
+    max-height: 80vh;                /* never taller than 80% of viewport */
+    overflow-y: auto;                /* scroll if needed on very short screens */
     box-sizing: border-box;
     height: auto;
     padding: 0.9rem 1rem;
     right: 0.5rem;
-    top: calc(48px + 0.5rem);
-    overflow: visible;
+    bottom: 1.5rem;
+    top: auto;
+    overflow-x: hidden;
   }
   .toggle-panel.panel-open .toggle-panel-title { display: block; }
   .toggle-panel.panel-open .toggle-item {
@@ -686,7 +691,7 @@ em { font-style: italic; }
     white-space: nowrap;
   }
   .toggle-panel-icon {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     line-height: 1;
   }
   /* Hide icon when expanded */
@@ -708,9 +713,10 @@ em { font-style: italic; }
   .hero { padding: 1.5rem 1rem; border-radius: 6px; }
   h1 { font-size: 1.6rem; }
   .box { padding: 1rem 1.1rem; }
-  .toggle-panel { right: 0.25rem; }
+  .toggle-panel { right: 0.5rem; bottom: 1rem; }
   .toggle-panel.panel-open {
     right: 0.25rem;
+    bottom: 1rem;
     max-width: calc(100vw - 0.5rem);
     padding: 0.8rem 0.85rem;
   }
@@ -810,18 +816,6 @@ em { font-style: italic; }
     display: inline-block;
     margin-bottom: 0.1rem;
     white-space: normal;
-  }
-}
-
-/* ── Responsive: toggle panel z-index safety ─────────────── */
-/* Ensure toggle panel never overlaps the sticky mobile nav bar */
-@media (max-width: 900px) {
-  .toggle-panel {
-    /* Keep below mobile bar (48px) with a safe margin */
-    top: calc(48px + 0.5rem);
-  }
-  .toggle-panel.panel-open {
-    top: calc(48px + 0.5rem);
   }
 }
 
